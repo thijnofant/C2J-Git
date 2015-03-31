@@ -6,8 +6,9 @@ package stamboom.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Properties;
 import stamboom.domain.Administratie;
-import stamboom.storage.IStorageMediator;
+import stamboom.storage.*;
 
 public class StamboomController {
 
@@ -20,7 +21,7 @@ public class StamboomController {
      */
     public StamboomController() {
         admin = new Administratie();
-        storageMediator = null;
+        storageMediator = new SerializationMediator();
     }
 
     public Administratie getAdministratie() {
@@ -41,7 +42,9 @@ public class StamboomController {
      * @throws IOException
      */
     public void serialize(File bestand) throws IOException {
-        //todo opgave 2
+        //todo opgave 2 busy
+        //storageMediator.configure(new Properties(bestand.getPath()));
+        storageMediator.save(admin);
         
     }
 
@@ -52,8 +55,8 @@ public class StamboomController {
      * @throws IOException
      */
     public void deserialize(File bestand) throws IOException {
-        //todo opgave 2
-  
+        //todo opgave 2 
+        admin = storageMediator.load();
     }
     
     // opgave 4
