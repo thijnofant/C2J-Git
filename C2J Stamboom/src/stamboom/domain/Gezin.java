@@ -73,8 +73,8 @@ public class Gezin implements Serializable {
     /**
      * @return alle kinderen uit dit gezin
      */
-    public List<Persoon> getKinderen() {
-        return (List<Persoon>) Collections.unmodifiableList(kinderen);
+    public ObservableList<Persoon> getKinderen() {
+        return (ObservableList<Persoon>) Collections.unmodifiableList(kinderen);
     }
 
     /**

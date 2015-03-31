@@ -2,6 +2,7 @@ package stamboom.domain;
 
 import java.util.*;
 import java.io.Serializable;
+import javafx.collections.ObservableList;
 
 public class Administratie implements Serializable {
 
@@ -312,8 +313,8 @@ public class Administratie implements Serializable {
      *
      * @return de geregistreerde personen
      */
-    public List<Persoon> getPersonen() {
-         return (List<Persoon>) Collections.unmodifiableList(this.personen);
+    public ObservableList<Persoon> getPersonen() {
+         return (ObservableList<Persoon>) Collections.unmodifiableList(this.personen);
     }
 
     /**
@@ -366,8 +367,8 @@ public class Administratie implements Serializable {
      *
      * @return de geregistreerde gezinnen
      */
-    public List<Gezin> getGezinnen() {
-        return null;
+    public ObservableList<Gezin> getGezinnen() {
+        return (ObservableList<Gezin>) Collections.unmodifiableList(this.gezinnen);
     }
 
     /**
