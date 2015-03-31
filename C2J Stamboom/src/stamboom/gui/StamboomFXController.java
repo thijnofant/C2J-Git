@@ -59,11 +59,14 @@ public class StamboomFXController extends StamboomController implements Initiali
 
     //opgave 4
     private boolean withDatabase;
+    private StamboomController controller;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         initComboboxes();
         withDatabase = false;
+        controller = new StamboomController();
+        
     }
 
     private void initComboboxes() {
