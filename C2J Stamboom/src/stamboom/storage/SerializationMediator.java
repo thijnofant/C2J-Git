@@ -40,12 +40,11 @@ public class SerializationMediator implements IStorageMediator {
         Administratie admin = null;
         int i = 1;
         try {
-            String path = System.getProperty("user.dir") + "\\Administrations";
+            String path = props.getProperty("file");
             System.out.println(path);
-            File myFile = new File(path + "\\Admin.ser");
-            System.out.println(myFile.getAbsolutePath());
+            File myFile = new File(path);
             System.out.println(myFile.exists());
-            FileInputStream fileIn = new FileInputStream(path + "\\Admin.ser");
+            FileInputStream fileIn = new FileInputStream(path);
             ObjectInputStream in = new ObjectInputStream(fileIn);
             admin = (Administratie) in.readObject();
             in.close();
@@ -71,7 +70,7 @@ public class SerializationMediator implements IStorageMediator {
 
         //todo opgave 2 
         try {
-            String path = System.getProperty("user.dir") + "\\Administrations";
+            String path = props.getProperty("file");
             System.out.println(path);
             File myFile = new File(path);
             System.out.println(myFile.exists());
@@ -80,7 +79,7 @@ public class SerializationMediator implements IStorageMediator {
                 myFile.createNewFile();
                 System.out.println(myFile.exists());
             }
-            FileOutputStream fileOut = new FileOutputStream(path + "\\Admin.ser");
+            FileOutputStream fileOut = new FileOutputStream(path);
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(admin);
             out.close();
@@ -120,6 +119,7 @@ public class SerializationMediator implements IStorageMediator {
      */
     @Override
     public boolean isCorrectlyConfigured() {
+        
         if (props == null) {
             return false;
         }
