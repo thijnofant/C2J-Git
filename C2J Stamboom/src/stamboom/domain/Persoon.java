@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.GregorianCalendar;
 import java.util.List;
+import javafx.collections.ObservableList;
 import stamboom.util.StringUtilities;
 
 public class Persoon implements Serializable{
@@ -160,8 +161,8 @@ public class Persoon implements Serializable{
     /**
      * @return de gezinnen waar deze persoon bij betrokken is
      */
-    public List<Gezin> getAlsOuderBetrokkenIn() {
-        return (List<Gezin>) Collections.unmodifiableList(alsOuderBetrokkenIn);
+    public ObservableList<Gezin> getAlsOuderBetrokkenIn() {
+        return (ObservableList<Gezin>) Collections.unmodifiableList(alsOuderBetrokkenIn);
     }
 
     /**
