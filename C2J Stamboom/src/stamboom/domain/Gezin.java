@@ -6,8 +6,9 @@ import javafx.beans.property.SimpleLongProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import stamboom.util.StringUtilities;
+import java.io.Serializable;
 
-public class Gezin {
+public class Gezin implements Serializable {
 
     // *********datavelden*************************************
     private final int nr;

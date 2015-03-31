@@ -1,5 +1,6 @@
 package stamboom.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -7,7 +8,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import stamboom.util.StringUtilities;
 
-public class Persoon {
+public class Persoon implements Serializable{
 
     // ********datavelden**************************************
     private final int nr;

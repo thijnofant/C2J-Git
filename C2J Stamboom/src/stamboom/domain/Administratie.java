@@ -1,8 +1,9 @@
 package stamboom.domain;
 
 import java.util.*;
+import java.io.Serializable;
 
-public class Administratie {
+public class Administratie implements Serializable {
 
     //************************datavelden*************************************
     private int nextGezinsNr;
@@ -213,7 +214,7 @@ public class Administratie {
      * anders het gehuwde gezin
      */
     public Gezin addHuwelijk(Persoon ouder1, Persoon ouder2, Calendar huwdatum) {
-        //todo opgave 1
+        //todo opgave 1 DONE
         Gezin reGezin = null;
         if (ouder1.equals(ouder2)){ return null; }
         for (int i = 0; i < gezinnen.size(); i++)
@@ -294,7 +295,7 @@ public class Administratie {
      * achternaam (ongeacht hoofd- en kleine letters)
      */
     public ArrayList<Persoon> getPersonenMetAchternaam(String achternaam) {
-        //todo opgave 1
+        //todo opgave 1 DONE
         ArrayList reList = new ArrayList();
         for (int i = 0; i < personen.size(); i++)
         {
@@ -328,7 +329,7 @@ public class Administratie {
      */
     public Persoon getPersoon(String[] vnamen, String anaam, String tvoegsel,
             Calendar gebdat, String gebplaats) {
-        //todo opgave 1
+        //todo opgave 1 DONE
         for(Persoon p : this.personen) {
             if(!(gebplaats.toLowerCase().equals(p.getGebPlaats().toLowerCase()))) {
                 return null;
