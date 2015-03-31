@@ -57,4 +57,4 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-C2J Stamboom/build/built-jar.properties
+*.properties
