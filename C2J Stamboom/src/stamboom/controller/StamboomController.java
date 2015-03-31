@@ -42,8 +42,8 @@ public class StamboomController {
      * @throws IOException
      */
     public void serialize(File bestand) throws IOException {
-        //todo opgave 2
-        storageMediator.configure(new Properties(bestand.getPath()));
+        //todo opgave 2 busy
+        //storageMediator.configure(new Properties(bestand.getPath()));
         storageMediator.save(admin);
         
     }
