@@ -81,10 +81,10 @@ public class StamboomFXController extends StamboomController implements Initiali
     private StamboomController controller;
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        initComboboxes();
+    public void initialize(URL url, ResourceBundle rb) {      
         withDatabase = false;
         controller = new StamboomController();
+        initComboboxes();
         
     }
 
@@ -204,6 +204,7 @@ public class StamboomFXController extends StamboomController implements Initiali
         String gebPlaats = tfGebPlaats1.textProperty().getValue();
         
         controller.getAdministratie().addPersoon(geslacht, vnamen, anaam, tussenvoegsel, gebdat, gebPlaats, null);
+        clearTabPersoonInvoer();
     }
 
     public void okGezinInvoer(Event evt) {
@@ -308,8 +309,13 @@ public class StamboomFXController extends StamboomController implements Initiali
 
     
     private void clearTabPersoonInvoer() {
-        //todo opgave 3
-        
+        tfVoornamen1.clear();
+        tfTussenvoegsel1.clear();
+        tfAchternaam1.clear();
+        tfGeslacht1.clear();
+        tfGebDatum1.textProperty().set("dd-mm-yyyy");
+        tfGebPlaats1.clear();       
+        cbOuderlijkGezin1.getSelectionModel().clearSelection();
     }
 
     
