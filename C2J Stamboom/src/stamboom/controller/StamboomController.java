@@ -5,6 +5,7 @@
 package stamboom.controller;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 import stamboom.domain.Administratie;
@@ -42,9 +43,19 @@ public class StamboomController {
      * @throws IOException
      */
     public void serialize(File bestand) throws IOException {
-        //todo opgave 2 busy
-        storageMediator.save(admin);
+        Properties props = new Properties();
+        try {
+            FileInputStream in = new FileInputStream(bestand);
+            props.load(in);
+            in.close();
+        } catch (Exception e) {
+            System.out.println("In serialize property ophalen ging fout");
+        }
         
+        
+        //todo opgave 2 busy
+        storageMediator.configure(props);
+        storageMediator.save(admin);
     }
 
     /**
@@ -54,7 +65,18 @@ public class StamboomController {
      * @throws IOException
      */
     public void deserialize(File bestand) throws IOException {
-        //todo opgave 2 
+        Properties props = new Properties();
+        try {
+            FileInputStream in = new FileInputStream(bestand);
+            props.load(in);
+            in.close();
+        } catch (Exception e) {
+            System.out.println("Iets ging fout met het laden van de properties bij deserialize");
+        }
+        
+        
+        //todo opgave 2 busy
+        storageMediator.configure(props);
         admin = storageMediator.load();
     }
     

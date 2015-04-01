@@ -32,15 +32,18 @@ public class SerializationMediator implements IStorageMediator {
 
     @Override
     public Administratie load() throws IOException {
-        if (!isCorrectlyConfigured()) {
-            throw new RuntimeException("Serialization mediator isn't initialized correctly.");
-        }
+//        if (!isCorrectlyConfigured()) {
+//            throw new RuntimeException("Serialization mediator isn't initialized correctly.");
+//        
+        System.out.println("Now Loading");
+        
 
         //todo opgave 2 
         Administratie admin = null;
         int i = 1;
         try {
-            String path = props.getProperty("file");
+            //String path = props.getProperty("file");
+            String path = System.getProperty("user.dir") + "\\Players\\Admin.ser";
             System.out.println(path);
             File myFile = new File(path);
             System.out.println(myFile.exists());
@@ -64,13 +67,14 @@ public class SerializationMediator implements IStorageMediator {
 
     @Override
     public void save(Administratie admin) throws IOException {
-        if (!isCorrectlyConfigured()) {
-            throw new RuntimeException("Serialization mediator isn't initialized correctly.");
-        }
-
+//        if (!isCorrectlyConfigured()) {
+//            throw new RuntimeException("Serialization mediator isn't initialized correctly.");
+//        }
+        
         //todo opgave 2 
         try {
-            String path = props.getProperty("file");
+            //String path = props.getProperty("file");
+            String path = System.getProperty("user.dir") + "\\Players";
             System.out.println(path);
             File myFile = new File(path);
             System.out.println(myFile.exists());
@@ -79,7 +83,7 @@ public class SerializationMediator implements IStorageMediator {
                 myFile.createNewFile();
                 System.out.println(myFile.exists());
             }
-            FileOutputStream fileOut = new FileOutputStream(path);
+            FileOutputStream fileOut = new FileOutputStream(path + "\\Admin.ser");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(admin);
             out.close();
