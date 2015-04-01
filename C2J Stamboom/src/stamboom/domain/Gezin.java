@@ -74,7 +74,8 @@ public class Gezin implements Serializable {
      * @return alle kinderen uit dit gezin
      */
     public ObservableList<Persoon> getKinderen() {
-        return (ObservableList<Persoon>) Collections.unmodifiableList(kinderen);
+        ObservableList<Persoon> oListkinderen = FXCollections.observableArrayList(this.kinderen);
+        return oListkinderen;
     }
 
     /**
