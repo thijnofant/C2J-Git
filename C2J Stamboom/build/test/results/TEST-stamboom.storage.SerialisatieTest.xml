@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Thijn" name="stamboom.storage.SerialisatieTest" skipped="0" tests="1" time="0.102" timestamp="2015-04-01T08:09:26">
+<testsuite errors="0" failures="0" hostname="Thijn" name="stamboom.storage.SerialisatieTest" skipped="0" tests="1" time="0.086" timestamp="2015-04-01T09:07:37">
   <properties>
     <property name="netbeans.autoupdate.country" value="US" />
     <property name="javafx.binarycss" value="false" />
@@ -49,7 +49,7 @@
     <property name="user.name" value="Thijn" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner stamboom.storage.SerialisatieTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\GitHub\C2J-Git\C2J Stamboom\build\test\results\TEST-stamboom.storage.SerialisatieTest.xml crashfile=D:\GitHub\C2J-Git\C2J Stamboom\build\junitvmwatcher7175879793686069837.properties propsfile=D:\GitHub\C2J-Git\C2J Stamboom\build\junit5673495609174847430.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner stamboom.storage.SerialisatieTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\GitHub\C2J-Git\C2J Stamboom\build\test\results\TEST-stamboom.storage.SerialisatieTest.xml crashfile=D:\GitHub\C2J-Git\C2J Stamboom\build\junitvmwatcher4116815057797073490.properties propsfile=D:\GitHub\C2J-Git\C2J Stamboom\build\junit2878638396424503437.properties" />
     <property name="auxiliary.org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.wrapAnnotations" value="WRAP_NEVER" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
@@ -84,7 +84,7 @@
     <property name="javac.debug" value="true" />
     <property name="javadoc.splitindex" value="true" />
     <property name="file.separator" value="\" />
-    <property name="javac.includesfile.binary" value="D:\GitHub\C2J-Git\C2J Stamboom\null101552047" />
+    <property name="javac.includesfile.binary" value="D:\GitHub\C2J-Git\C2J Stamboom\null2123534127" />
     <property name="libs.junit_4.maven-pom" value="" />
     <property name="mkdist.disabled" value="false" />
     <property name="javac.test.processorpath" value="D:\Program Files\NetBeans 8.0.2\ide\modules\ext\mysql-connector-java-5.1.23-bin.jar:D:\Program Files\NetBeans 8.0.2\platform\modules\ext\junit-4.10.jar:D:\Program Files\Java\jdk1.8.0_31\jre/lib/javaws.jar:D:\Program Files\Java\jdk1.8.0_31\jre/lib/deploy.jar:D:\Program Files\Java\jdk1.8.0_31\jre/lib/plugin.jar:build/classes" />
@@ -286,6 +286,7 @@
     <property name="sun.awt.keepWorkingSetOnMinimize" value="true" />
     <property name="libs.jpa20-persistence.src" value="" />
     <property name="auxiliary.org-netbeans-modules-editor-indent.CodeStyle.project.spaces-per-tab" value="4" />
+    <property name="ignore.failing.tests" value="true" />
     <property name="javafx.enable.concurrent.external.runs" value="false" />
     <property name="javafx.deploy.embedJNLP" value="true" />
     <property name="dist.dir" value="dist" />
@@ -319,18 +320,18 @@
     <property name="os.version" value="6.3" />
     <property name="application.args" value="" />
     <property name="manifest.custom.permissions" value="" />
-    <property name="main.class.available" value="true" />
     <property name="sun.awt.enableExtraMouseButtons" value="true" />
+    <property name="main.class.available" value="true" />
     <property name="sun.desktop" value="windows" />
     <property name="libs.hibernate4-persistence.src" value="" />
     <property name="auxiliary.org-netbeans-spi-editor-hints-projects.perProjectHintSettingsFile" value="nbproject/cfg_hints.xml" />
     <property name="libs.hibernate4-support.maven-pom" value="" />
     <property name="javafx.deploy.allowoffline" value="true" />
     <property name="libs.JAXB-ENDORSED.classpath" value="D:\Program Files\NetBeans 8.0.2\ide\modules\ext\jaxb\api\jaxb-api.jar" />
-    <property name="nb.internal.action.name" value="run.single" />
+    <property name="nb.internal.action.name" value="test.single" />
     <property name="libs.eclipselink.classpath" value="D:\Program Files\NetBeans 8.0.2\java\modules\ext\eclipselink\eclipselink.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\eclipselink\javax.persistence_2.1.0.v201304241213.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\eclipselink\org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar" />
-    <property name="libs.beans-binding.javadoc" value="D:\Program Files\NetBeans 8.0.2\java\docs\beansbinding-1.2.1-doc.zip" />
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="libs.beans-binding.javadoc" value="D:\Program Files\NetBeans 8.0.2\java\docs\beansbinding-1.2.1-doc.zip" />
     <property name="java.vm.vendor" value="Oracle Corporation" />
     <property name="libs.CopyLibs.classpath" value="D:\Program Files\NetBeans 8.0.2\java\ant\extra\org-netbeans-modules-java-j2seproject-copylibstask.jar" />
     <property name="libs.spring-framework300.classpath" value="D:\Program Files\NetBeans 8.0.2\ide\modules\org-apache-commons-logging.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\cglib-2.2.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\spring-3.0\spring-aop-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\spring-3.0\spring-aspects-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\spring-3.0\spring-beans-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\spring-3.0\spring-build-src-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\spring-3.0\spring-context-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\spring-3.0\spring-context-support-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\spring-3.0\spring-core-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\spring-3.0\spring-expression-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\spring-3.0\spring-framework-bom-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\spring-3.0\spring-instrument-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\spring-3.0\spring-instrument-tomcat-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\spring-3.0\spring-jdbc-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\spring-3.0\spring-jms-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\spring-3.0\spring-orm-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\spring-3.0\spring-oxm-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\spring-3.0\spring-struts-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\spring-3.0\spring-test-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\spring-3.0\spring-tx-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\spring-3.0\spring-web-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\spring-3.0\spring-webmvc-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\spring-3.0\spring-webmvc-portlet-3.2.7.RELEASE.jar" />
@@ -344,8 +345,8 @@
     <property name="libs.junit.src" value="" />
     <property name="annotation.processing.source.output" value="build/generated-sources/ap-source-output" />
     <property name="main.class" value="com.javafx.main.Main" />
-    <property name="build.dir" value="build" />
     <property name="libs.CopyLibs.src" value="" />
+    <property name="build.dir" value="build" />
     <property name="ant.version" value="Apache Ant(TM) version 1.9.4 compiled on April 29 2014" />
     <property name="file.encoding" value="Cp1252" />
     <property name="build.classes.excludes" value="**/*.java,**/*.form" />
@@ -355,16 +356,15 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="javafx.deploy.installpermanently" value="false" />
   </properties>
-  <testcase classname="stamboom.storage.SerialisatieTest" name="testOpslag" time="0.057" />
-  <system-out><![CDATA[In serialize property ophalen ging fout
-D:\GitHub\C2J-Git\C2J Stamboom\Players
+  <testcase classname="stamboom.storage.SerialisatieTest" name="testOpslag" time="0.048" />
+  <system-out><![CDATA[testOpslag
+false
 true
-Data was saved to D:\GitHub\C2J-Git\C2J Stamboom\Players\Admin.ser
-Iets ging fout met het laden van de properties bij deserialize
+Data was saved to testOpslag
 Now Loading
-D:\GitHub\C2J-Git\C2J Stamboom\Players\Admin.ser
+testOpslag
 true
-Deserialized Employee...
+Deserialized Administration...
 aantal gezinnen: 1
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

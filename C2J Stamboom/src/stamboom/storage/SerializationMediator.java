@@ -38,12 +38,11 @@ public class SerializationMediator implements IStorageMediator {
         System.out.println("Now Loading");
         
 
-        //todo opgave 2 
+        //todo opgave 2 DONE
         Administratie admin = null;
         int i = 1;
         try {
-            //String path = props.getProperty("file");
-            String path = System.getProperty("user.dir") + "\\Players\\Admin.ser";
+            String path = props.getProperty("file");
             System.out.println(path);
             File myFile = new File(path);
             System.out.println(myFile.exists());
@@ -56,11 +55,11 @@ public class SerializationMediator implements IStorageMediator {
             e.printStackTrace();
             return null;
         } catch (ClassNotFoundException c) {
-            System.out.println("Player class not found");
+            System.out.println("Administration class not found");
             c.printStackTrace();
             return null;
         }
-        System.out.println("Deserialized Employee...");
+        System.out.println("Deserialized Administration...");
         System.out.println("aantal gezinnen: " + admin.aantalGeregistreerdeGezinnen());
         return admin;
     }
@@ -71,24 +70,22 @@ public class SerializationMediator implements IStorageMediator {
 //            throw new RuntimeException("Serialization mediator isn't initialized correctly.");
 //        }
         
-        //todo opgave 2 
+        //todo opgave 2 DONE
         try {
-            //String path = props.getProperty("file");
-            String path = System.getProperty("user.dir") + "\\Players";
+            String path = props.getProperty("file");
             System.out.println(path);
             File myFile = new File(path);
             System.out.println(myFile.exists());
             if (!myFile.exists()) {
-                myFile.mkdirs();
                 myFile.createNewFile();
                 System.out.println(myFile.exists());
             }
-            FileOutputStream fileOut = new FileOutputStream(path + "\\Admin.ser");
+            FileOutputStream fileOut = new FileOutputStream(path);
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(admin);
             out.close();
             fileOut.close();
-            System.out.println("Data was saved to " + path + "\\Admin.ser");
+            System.out.println("Data was saved to " + path);
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Something went the f wrong");

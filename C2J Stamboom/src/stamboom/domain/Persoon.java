@@ -354,7 +354,7 @@ public class Persoon implements Serializable{
     public String stamboomAlsString() {
         StringBuilder builder = new StringBuilder();
         //todo opgave 2
-
+        
         return builder.toString();
     }
 }
