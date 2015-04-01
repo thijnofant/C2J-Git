@@ -5,15 +5,23 @@
 package stamboom.gui;
 
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.ListChangeListener;
 import stamboom.controller.StamboomController;
+import stamboom.domain.Geslacht;
 import stamboom.domain.Gezin;
 import stamboom.domain.Persoon;
 import stamboom.util.StringUtilities;
@@ -56,6 +64,17 @@ public class StamboomFXController extends StamboomController implements Initiali
     @FXML TextField tfScheidingInvoer;
     @FXML Button btOKGezinInvoer;
     @FXML Button btCancelGezinInvoer;
+    
+    //INVOER NIEUW PERSOON
+    @FXML TextField tfVoornamen1;
+    @FXML TextField tfTussenvoegsel1;
+    @FXML TextField tfAchternaam1;
+    @FXML TextField tfGeslacht1;
+    @FXML TextField tfGebDatum1;
+    @FXML TextField tfGebPlaats1;
+    @FXML ComboBox cbOuderlijkGezin1;
+    @FXML Button btnMaakPersoon;
+    @FXML Button btnCancelPersoon;
 
     //opgave 4
     private boolean withDatabase;
@@ -70,7 +89,14 @@ public class StamboomFXController extends StamboomController implements Initiali
     }
 
     private void initComboboxes() {
-        //todo opgave 3 
+        cbPersonen = new ComboBox(controller.getAdministratie().getPersonen());
+        
+        controller.getAdministratie().getPersonen().addListener(new ListChangeListener() {
+            @Override
+            public void onChanged(ListChangeListener.Change c) {
+                cbPersonen = new ComboBox(controller.getAdministratie().getPersonen());
+            }
+        });
 
     }
 
@@ -145,8 +171,39 @@ public class StamboomFXController extends StamboomController implements Initiali
     }
 
     public void okPersoonInvoer(Event evt) {
-        // todo opgave 3
-
+        if(tfVoornamen1.textProperty().isEmpty().getValue() ||
+                tfAchternaam1.textProperty().isEmpty().getValue() ||
+                tfGeslacht1.textProperty().isEmpty().getValue() ||
+                tfGebDatum1.textProperty().isEmpty().getValue() ||
+                tfGebPlaats1.textProperty().isEmpty().getValue()
+                ) {
+            return;
+        }
+        String vnamenstring = tfVoornamen1.textProperty().getValue();
+        String[] vnamen = vnamenstring.split(" ");
+        String tvoegsel = tfTussenvoegsel1.textProperty().getValue();        
+        Geslacht geslacht = null;
+        if (tfGeslacht1.textProperty().getValue().charAt(0) == 'm') {
+            geslacht = Geslacht.MAN;
+        }
+        else if (tfGeslacht1.textProperty().getValue().charAt(0) == 'v') {
+            geslacht = Geslacht.VROUW;
+        }
+        else {
+            return;
+        }     
+        String anaam = tfAchternaam1.textProperty().getValue();
+        String tussenvoegsel = tfTussenvoegsel1.textProperty().getValue();
+        SimpleDateFormat df = new SimpleDateFormat("dd-mm-yyyy");
+        Calendar gebdat = Calendar.getInstance();
+        try {
+            gebdat.setTime(df.parse(tfGebDatum1.textProperty().getValue()));
+        } catch (ParseException ex) {
+            System.out.println("Date conversion failed.");
+        }
+        String gebPlaats = tfGebPlaats1.textProperty().getValue();
+        
+        controller.getAdministratie().addPersoon(geslacht, vnamen, anaam, tussenvoegsel, gebdat, gebPlaats, null);
     }
 
     public void okGezinInvoer(Event evt) {

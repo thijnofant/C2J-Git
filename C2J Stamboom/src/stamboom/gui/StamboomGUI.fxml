@@ -169,6 +169,7 @@
                                                 <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                           </GridPane>
+                                          <Button fx:id="bevestigGezin" layoutX="120.0" layoutY="228.0" mnemonicParsing="false" text="Bevestig" />
                                        </children>
                                     </AnchorPane>
                                 </items>
@@ -223,7 +224,7 @@
                                     <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
                                  </rowConstraints>
                               </GridPane>
-                              <Button fx:id="btnMaakPersoon" layoutX="24.0" layoutY="227.0" mnemonicParsing="false" onAction="#okPersoonInvoer" text="Creëer persoon" />
+                              <Button fx:id="btnMaakPersoon" layoutX="24.0" layoutY="227.0" mnemonicParsing="false" onAction="#okPersoonInvoer" text="Voer in" />
                               <Button fx:id="btnMaakPersoon1" layoutX="174.0" layoutY="227.0" mnemonicParsing="false" onAction="#cancelPersoonInvoer" text="Cancel" />
                            </children>
                         </AnchorPane>
