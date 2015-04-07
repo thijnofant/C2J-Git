@@ -89,6 +89,7 @@ public class Administratie implements Serializable {
 
         
         this.personen.add(newPersoon);
+        this.obsPersonen.add(newPersoon);
         this.nextPersNr += 1;
         
         return newPersoon;
@@ -148,6 +149,7 @@ public class Administratie implements Serializable {
         Gezin gezin = new Gezin(nextGezinsNr, ouder1, ouder2);
         nextGezinsNr++;
         gezinnen.add(gezin);
+        obsGezinnen.add(gezin);
 
         ouder1.wordtOuderIn(gezin);
         if (ouder2 != null) {
@@ -254,6 +256,7 @@ public class Administratie implements Serializable {
             this.nextGezinsNr += 1;
             reGezin.setHuwelijk(huwdatum);
             this.gezinnen.add(reGezin);
+            this.obsGezinnen.add(reGezin);
             if(ouder1 != null){
                 ouder1.wordtOuderIn(reGezin);
             }
@@ -321,7 +324,7 @@ public class Administratie implements Serializable {
      * @return de geregistreerde personen
      */
     public ObservableList<Persoon> getPersonen() {
-         return FXCollections.unmodifiableObservableList(FXCollections.observableList(personen));
+         return FXCollections.unmodifiableObservableList(obsPersonen);
     }
 
     /**
@@ -375,7 +378,7 @@ public class Administratie implements Serializable {
      * @return de geregistreerde gezinnen
      */
     public ObservableList<Gezin> getGezinnen() {
-       return FXCollections.unmodifiableObservableList(FXCollections.observableList(gezinnen));
+       return FXCollections.unmodifiableObservableList(obsGezinnen);
     }
 
     /**
