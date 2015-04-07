@@ -108,6 +108,7 @@ public class StamboomFXController extends StamboomController implements Initiali
         //Test: Geslaagd.
 
         cbPersonen.setItems(this.controller.getAdministratie().getPersonen());
+        cbOuderlijkGezin.setItems(this.controller.getAdministratie().getGezinnen());
         cbOuder1Invoer.setItems(this.controller.getAdministratie().getPersonen());
         cbOuder2Invoer.setItems(this.controller.getAdministratie().getPersonen());
         controller.getAdministratie().getPersonen().addListener(new ListChangeListener() {
@@ -125,7 +126,9 @@ public class StamboomFXController extends StamboomController implements Initiali
             @Override
             public void onChanged(ListChangeListener.Change c) {
                 cbGezinnen.setItems(controller.getAdministratie().getGezinnen());
+                cbOuderlijkGezin.setItems(controller.getAdministratie().getGezinnen());
                 cbOuderlijkGezin1.setItems(controller.getAdministratie().getGezinnen());
+                showGezin((Gezin)cbGezinnen.getSelectionModel().getSelectedItem());
             }
         });
 
