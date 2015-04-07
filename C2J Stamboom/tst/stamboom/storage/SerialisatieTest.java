@@ -73,7 +73,12 @@ public class SerialisatieTest extends TestCase {
         assertEquals("nummering van personen onjuist", adm.aantalGeregistreerdePersonen() + 1, jan.getNr());
         Gezin rosaEnJan = adm2.addOngehuwdGezin(rosa, jan);
         assertEquals("nummering van gezinnen onjuist", adm.aantalGeregistreerdeGezinnen() + 1, rosaEnJan.getNr());
-
+        //todo test shit
+        System.out.println("Aantal geregistreerde personen: "+adm.aantalGeregistreerdePersonen());
+        System.out.println("admin1: "+adm.toString());
+        System.out.println("admin2: "+adm2.toString());
+        System.out.println("Aantal personen: "+adm2.getPersonen().toString());
+        //
         assertEquals("aantal personen in observable personen onjuist", adm.aantalGeregistreerdePersonen() + 1,
                 adm2.getPersonen().size());
         assertTrue("File Deletion failed",testOpslag.delete());
