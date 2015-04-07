@@ -109,7 +109,7 @@ public class StamboomFXController extends StamboomController implements Initiali
         //Test: Geslaagd.
         
         cbPersonen.setItems(this.controller.getAdministratie().getPersonen());
-        selectGezin.setItems(this.controller.getAdministratie().getGezinnen());
+        //selectGezin.setItems(this.controller.getAdministratie().getGezinnen());
         
         
         controller.getAdministratie().getPersonen().addListener(new ListChangeListener() {
@@ -207,10 +207,10 @@ public class StamboomFXController extends StamboomController implements Initiali
             tussenvoegsel = tfTussenvoegsel1.textProperty().getValue();        
         }
         Geslacht geslacht = null;
-        if (tfGeslacht1.textProperty().getValue().charAt(0) == 'm') {
+        if (tfGeslacht1.textProperty().getValue().toLowerCase().charAt(0) == 'm') {
             geslacht = Geslacht.MAN;
         }
-        else if (tfGeslacht1.textProperty().getValue().charAt(0) == 'v') {
+        else if (tfGeslacht1.textProperty().getValue().toLowerCase().charAt(0) == 'v') {
             geslacht = Geslacht.VROUW;
         }
         else {
