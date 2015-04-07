@@ -203,7 +203,7 @@ public class StamboomFXController extends StamboomController implements Initiali
         String vnamenstring = tfVoornamen1.textProperty().getValue();
         String[] vnamen = vnamenstring.split(" ");
         String tussenvoegsel = "";
-        if(!tfTussenvoegsel1.textProperty().isEmpty().getValue()) { 
+        if(!(tfTussenvoegsel1.getText().equals(""))) { 
             tussenvoegsel = tfTussenvoegsel1.textProperty().getValue();        
         }
         Geslacht geslacht = null;

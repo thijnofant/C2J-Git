@@ -192,7 +192,7 @@
                                     <Label alignment="CENTER_RIGHT" graphicTextGap="4.0" prefWidth="-1.0" text="GebPlaats" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.margin="$x31" GridPane.rowIndex="5" />
                                     <Label alignment="CENTER_RIGHT" graphicTextGap="4.0" prefWidth="-1.0" text="Ouderlijk Gezin" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.margin="$x31" GridPane.rowIndex="6" />
                                     <TextField id="tfPersoonNr" fx:id="tfVoornamen1" prefWidth="200.0" GridPane.columnIndex="1" />
-                                    <TextField id="tfPersoonNr" fx:id="tfTusenvoegsel1" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField id="tfPersoonNr" fx:id="tfTussenvoegsel1" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                     <TextField id="tfPersoonNr" fx:id="tfAchternaam1" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                     <ComboBox fx:id="cbOuderlijkGezin1" onAction="#setOuders" prefWidth="400.0" promptText="Kies (zo mogelijk) het ouderlijk gezin" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                        <items>
