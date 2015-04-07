@@ -181,7 +181,10 @@ public class StamboomFXController extends StamboomController implements Initiali
         }
         String vnamenstring = tfVoornamen1.textProperty().getValue();
         String[] vnamen = vnamenstring.split(" ");
-        String tvoegsel = tfTussenvoegsel1.textProperty().getValue();        
+        String tussenvoegsel = "";
+        if(!tfTussenvoegsel1.textProperty().isEmpty().getValue()) { 
+            tussenvoegsel = tfTussenvoegsel1.textProperty().getValue();        
+        }
         Geslacht geslacht = null;
         if (tfGeslacht1.textProperty().getValue().charAt(0) == 'm') {
             geslacht = Geslacht.MAN;
@@ -193,7 +196,6 @@ public class StamboomFXController extends StamboomController implements Initiali
             return;
         }     
         String anaam = tfAchternaam1.textProperty().getValue();
-        String tussenvoegsel = tfTussenvoegsel1.textProperty().getValue();
         SimpleDateFormat df = new SimpleDateFormat("dd-mm-yyyy");
         Calendar gebdat = Calendar.getInstance();
         try {
