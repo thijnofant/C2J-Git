@@ -109,13 +109,18 @@ public class StamboomFXController extends StamboomController implements Initiali
         //Test: Geslaagd.
         
         cbPersonen.setItems(this.controller.getAdministratie().getPersonen());
-        selectGezin.setItems(this.controller.getAdministratie().getGezinnen());
+        
+        //selectGezin.setItems(this.controller.getAdministratie().getGezinnen());
+        
         
         
         controller.getAdministratie().getPersonen().addListener(new ListChangeListener() {
             @Override
             public void onChanged(ListChangeListener.Change c) {
-                cbPersonen = new ComboBox(controller.getAdministratie().getPersonen());
+                if (c.wasUpdated())
+                {
+                    cbPersonen.setItems(controller.getAdministratie().getPersonen());
+                }
             }
         });
 

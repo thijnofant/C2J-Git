@@ -115,7 +115,7 @@
                                 <items>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                        <children>
-                                          <ComboBox fx:id="cbPersonen1" layoutX="14.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#selectGezin" prefHeight="25.0" prefWidth="178.0" promptText="kies gezin">
+                                          <ComboBox fx:id="cbGezinnen" layoutX="14.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#selectGezin" prefHeight="25.0" prefWidth="178.0" promptText="kies gezin">
                                              <items>
                                                 <FXCollections fx:factory="observableArrayList">
                                                    <String fx:value="Item 1" />
@@ -133,7 +133,7 @@
                                                 <TextField fx:id="tfScheidingInvoer1" onAction="#setScheidingsdatum" prefHeight="-1.0" promptText="dd-mm-jjjj" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                                                 <Label alignment="CENTER_RIGHT" prefHeight="-1.0" prefWidth="-1.0" text="Scheiding op" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.margin="$x3" GridPane.rowIndex="3" />
                                                 <TextField fx:id="tfHuwelijkInvoer1" prefHeight="-1.0" promptText="dd-mm-jjjj" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                                <ComboBox fx:id="cbOuder2Invoer1" prefHeight="-1.0" prefWidth="400.0" promptText="kies (zo mogelijk) 2e ouder" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                <ComboBox fx:id="cbOuder2" prefHeight="-1.0" prefWidth="400.0" promptText="kies (zo mogelijk) 2e ouder" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <items>
                                                       <FXCollections fx:factory="observableArrayList">
                                                          <String fx:value="Item 1" />
@@ -142,7 +142,7 @@
                                                       </FXCollections>
                                                    </items>
                                                 </ComboBox>
-                                                <ComboBox fx:id="cbOuder1Invoer1" prefHeight="-1.0" prefWidth="400.0" promptText="kies 1e ouder" GridPane.columnIndex="1">
+                                                <ComboBox fx:id="cbOuder1" prefHeight="-1.0" prefWidth="400.0" promptText="kies 1e ouder" GridPane.columnIndex="1">
                                                    <items>
                                                       <FXCollections fx:factory="observableArrayList">
                                                          <String fx:value="Item 1" />
@@ -169,7 +169,7 @@
                                                 <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                           </GridPane>
-                                          <Button fx:id="bevestigGezin" layoutX="120.0" layoutY="228.0" mnemonicParsing="false" text="Bevestig" />
+                                          <Button fx:id="btBevestigGezin" layoutX="120.0" layoutY="228.0" mnemonicParsing="false" text="Bevestig" />
                                        </children>
                                     </AnchorPane>
                                 </items>
