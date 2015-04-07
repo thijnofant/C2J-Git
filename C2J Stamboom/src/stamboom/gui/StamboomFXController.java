@@ -236,8 +236,10 @@ public class StamboomFXController extends StamboomController implements Initiali
             System.out.println("Date conversion failed.");
         }
         String gebPlaats = tfGebPlaats1.textProperty().getValue();
+        
+        Gezin gezin = (Gezin)cbOuderlijkGezin1.getSelectionModel().getSelectedItem();
 
-        controller.getAdministratie().addPersoon(geslacht, vnamen, anaam, tussenvoegsel, gebdat, gebPlaats, null);
+        controller.getAdministratie().addPersoon(geslacht, vnamen, anaam, tussenvoegsel, gebdat, gebPlaats, gezin);
         clearTabPersoonInvoer();
     }
 
