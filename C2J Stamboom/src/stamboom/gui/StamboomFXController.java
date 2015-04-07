@@ -105,6 +105,7 @@ public class StamboomFXController extends StamboomController implements Initiali
         namen = new String[]{"test"};
         GregorianCalendar GC = new GregorianCalendar();
         controller.getAdministratie().addPersoon(Geslacht.MAN, namen, "Test", "De", GC, "Testland", null);
+        controller.getAdministratie().addPersoon(Geslacht.MAN, namen, "Test", "van", GC, "Testland", null);
         //Test: Geslaagd.
 
         cbPersonen.setItems(this.controller.getAdministratie().getPersonen());
