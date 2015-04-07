@@ -204,7 +204,7 @@
                                        </items>
                                     </ComboBox>
                                     <TextField id="tfPersoonNr" fx:id="tfGebPlaats1" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                    <TextField id="tfPersoonNr" fx:id="tfGebDatum1" prefWidth="200.0" text="dd-mm-yyyy" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <TextField id="tfPersoonNr" fx:id="tfGebDatum1" prefWidth="200.0" promptText="dd-mm-yyyy" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                     <TextField fx:id="tfGeslacht1" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                                  </children>
                                  <columnConstraints>
