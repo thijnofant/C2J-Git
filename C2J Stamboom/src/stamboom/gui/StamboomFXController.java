@@ -57,8 +57,16 @@ public class StamboomFXController extends StamboomController implements Initiali
     @FXML ComboBox cbOuderlijkGezin;
     @FXML ListView lvAlsOuderBetrokkenBij;
     @FXML Button btStamboom;
-
-    //INVOER GEZIN
+    
+    //GEZIN
+    @FXML ComboBox selectGezin;
+    @FXML ComboBox cbOuder1;
+    @FXML ComboBox cbOuder2;
+    @FXML TextField tfHuwelijkInvoer1;
+    @FXML TextField tfScheidingInvoer1;
+    @FXML Button btBevestigGezin;
+    
+    //INVOER NIEUW GEZIN
     @FXML ComboBox cbOuder1Invoer;
     @FXML ComboBox cbOuder2Invoer;
     @FXML TextField tfHuwelijkInvoer;
@@ -76,6 +84,8 @@ public class StamboomFXController extends StamboomController implements Initiali
     @FXML ComboBox cbOuderlijkGezin1;
     @FXML Button btnMaakPersoon;
     @FXML Button btnCancelPersoon;
+    
+ 
 
     //opgave 4
     private boolean withDatabase;
@@ -91,12 +101,16 @@ public class StamboomFXController extends StamboomController implements Initiali
 
     private void initComboboxes() {
         
-        String[] namen;
-        namen = new String[]{"test"};
-        GregorianCalendar GC = new GregorianCalendar();
-        controller.getAdministratie().addPersoon(Geslacht.MAN, namen , "Adkin", "De", GC, "Venray", null);
+        //Test persoon voor het testen van de CB
+        //String[] namen;
+        //namen = new String[]{"test"};
+        //GregorianCalendar GC = new GregorianCalendar();
+        //controller.getAdministratie().addPersoon(Geslacht.MAN, namen , "Adkin", "De", GC, "Venray", null);
+        //Test: Geslaagd.
         
         cbPersonen.setItems(this.controller.getAdministratie().getPersonen());
+        selectGezin.setItems(this.controller.getAdministratie().getGezinnen());
+        
         
         controller.getAdministratie().getPersonen().addListener(new ListChangeListener() {
             @Override
