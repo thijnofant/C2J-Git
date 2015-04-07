@@ -8,6 +8,7 @@ import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -89,7 +90,13 @@ public class StamboomFXController extends StamboomController implements Initiali
     }
 
     private void initComboboxes() {
-        cbPersonen = new ComboBox(controller.getAdministratie().getPersonen());
+        
+        String[] namen;
+        namen = new String[]{"test"};
+        GregorianCalendar GC = new GregorianCalendar();
+        controller.getAdministratie().addPersoon(Geslacht.MAN, namen , "Adkin", "De", GC, "Venray", null);
+        
+        cbPersonen.setItems(this.controller.getAdministratie().getPersonen());
         
         controller.getAdministratie().getPersonen().addListener(new ListChangeListener() {
             @Override
