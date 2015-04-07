@@ -61,10 +61,10 @@ public class StamboomFXController extends StamboomController implements Initiali
 
     //GEZIN
     @FXML ComboBox cbGezinnen;
-    @FXML ComboBox cbOuder1;
-    @FXML ComboBox cbOuder2;
-    @FXML TextField tfHuwelijkInvoer1;
-    @FXML TextField tfScheidingInvoer1;
+    @FXML TextField tfOuder1;
+    @FXML TextField tfOuder2;
+    @FXML TextField tfHuwelijk;
+    @FXML TextField tfScheiding;
     @FXML Button btBevestigGezin;
 
     //INVOER NIEUW GEZIN
@@ -108,16 +108,12 @@ public class StamboomFXController extends StamboomController implements Initiali
         //Test: Geslaagd.
 
         cbPersonen.setItems(this.controller.getAdministratie().getPersonen());
-        cbOuder1.setItems(this.controller.getAdministratie().getPersonen());
-        cbOuder2.setItems(this.controller.getAdministratie().getPersonen());
         cbOuder1Invoer.setItems(this.controller.getAdministratie().getPersonen());
         cbOuder2Invoer.setItems(this.controller.getAdministratie().getPersonen());
         controller.getAdministratie().getPersonen().addListener(new ListChangeListener() {
             @Override
             public void onChanged(ListChangeListener.Change c) {
                 cbPersonen.setItems(controller.getAdministratie().getPersonen());
-                cbOuder1.setItems(controller.getAdministratie().getPersonen());
-                cbOuder2.setItems(controller.getAdministratie().getPersonen());
                 cbOuder1Invoer.setItems(controller.getAdministratie().getPersonen());
                 cbOuder2Invoer.setItems(controller.getAdministratie().getPersonen());
             }
@@ -181,13 +177,27 @@ public class StamboomFXController extends StamboomController implements Initiali
     }
 
     public void selectGezin(Event evt) {
-        // todo opgave 3
-
+        Gezin gezin = (Gezin)cbGezinnen.getSelectionModel().getSelectedItem();
+        showGezin(gezin);
     }
 
     private void showGezin(Gezin gezin) {
-        // todo opgave 3
-
+        if(gezin == null) {
+            clearTabGezin();
+            return;
+        }
+        if(!(gezin.getOuder1() == null)) {
+            tfOuder1.setText(gezin.getOuder1().toString());
+        }
+        if(!(gezin.getOuder2() == null)) {
+            tfOuder2.setText(gezin.getOuder2().toString());
+        }
+        if(!(gezin.getHuwelijksdatum() == null)) {
+            tfHuwelijk.setText(gezin.getHuwelijksdatum().toString());
+        }
+        if(!(gezin.getScheidingsdatum() == null)) {
+            tfScheiding.setText(gezin.getScheidingsdatum().toString());
+        }
     }
 
     public void setHuwdatum(Event evt) {
@@ -368,8 +378,10 @@ public class StamboomFXController extends StamboomController implements Initiali
     }
 
     private void clearTabGezin() {
-        // todo opgave 3
-
+        tfOuder1.clear();
+        tfOuder2.clear();
+        tfHuwelijk.clear();
+        tfScheiding.clear();
     }
 
     private void showDialog(String type, String message) {
