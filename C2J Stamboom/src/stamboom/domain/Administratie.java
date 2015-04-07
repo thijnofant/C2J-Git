@@ -106,21 +106,23 @@ public class Administratie implements Serializable {
      */
     public Gezin addOngehuwdGezin(Persoon ouder1, Persoon ouder2) {
 
-        if (ouder2 != null) {
-            if (ouder1 == ouder2) {
+        try {
+            Persoon ouder = ouder2;
+            if (ouder1 == ouder) {
                 return null;
             }
-            if (ouder2.getGebDat().after(Calendar.getInstance()) ) {
+            if (ouder.getGebDat().after(Calendar.getInstance()) ) {
             return null;
             }
             for (Gezin gez : gezinnen) {
                 if (ouder1.beschrijving().equals(gez.getOuder1().beschrijving())
                         || ouder1.beschrijving().equals(gez.getOuder2().beschrijving())
-                        || ouder2.beschrijving().equals(gez.getOuder1().beschrijving())
-                        || ouder2.beschrijving().equals(gez.getOuder2().beschrijving())) {
+                        || ouder.beschrijving().equals(gez.getOuder1().beschrijving())
+                        || ouder.beschrijving().equals(gez.getOuder2().beschrijving())) {
                     return null;
                 }
             }
+        } catch (Exception e) {
         }
         if (ouder1.getGebDat().after(Calendar.getInstance())) {
             return null;
@@ -147,7 +149,7 @@ public class Administratie implements Serializable {
         if (ouder2 != null) {
             ouder2.wordtOuderIn(gezin);
         }
-
+        
         return gezin;
     }
 

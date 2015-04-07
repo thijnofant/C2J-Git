@@ -310,13 +310,18 @@ public class Persoon implements Serializable{
      * grootouders etc); de persoon zelf telt ook mee
      */
     public int afmetingStamboom() {
-        //todo opgave 2 Done
+        //todo opgave 2 Done?
         int reval = 1;
-        if (this.ouderlijkGezin.getOuder1() != null) {
-            reval+= this.ouderlijkGezin.getOuder1().afmetingStamboom();
+        try {
+            Persoon ouder1 = this.ouderlijkGezin.getOuder1();
+            reval+= ouder1.afmetingStamboom();
+        } catch (Exception e) {
         }
-        if (this.ouderlijkGezin.getOuder2() != null) {
-            reval+= this.ouderlijkGezin.getOuder2().afmetingStamboom();
+        
+        try {
+            Persoon ouder2 = this.ouderlijkGezin.getOuder2();
+            reval+= ouder2.afmetingStamboom();
+        } catch (Exception e) {
         }
         return reval;
     }
@@ -334,7 +339,21 @@ public class Persoon implements Serializable{
      * toegewezen;
      */
     void voegJouwStamboomToe(ArrayList<PersoonMetGeneratie> lijst, int g) {
-        //todo opgave 2
+        //todo opgave 2 done?
+        PersoonMetGeneratie temp = new PersoonMetGeneratie(this.toString(), g);
+        lijst.add(temp);
+        
+        try {
+            Persoon ouder1 = this.ouderlijkGezin.getOuder1();
+            ouder1.voegJouwStamboomToe(lijst, g+1);
+        } catch (Exception e) {
+        }
+        
+        try {
+            Persoon ouder2 = this.ouderlijkGezin.getOuder2();
+            ouder2.voegJouwStamboomToe(lijst, g+1);
+        } catch (Exception e) {
+        }
     }
 
     /**
@@ -362,7 +381,22 @@ public class Persoon implements Serializable{
      */
     public String stamboomAlsString() {
         StringBuilder builder = new StringBuilder();
-        //todo opgave 2
+        //todo opgave 2 done
+        ArrayList<PersoonMetGeneratie> list = new ArrayList<>();
+        
+        this.voegJouwStamboomToe(list, 1);
+            
+        for (int i = 0; i < list.size(); i++) {
+            PersoonMetGeneratie temp = list.get(i);
+            String Entry = "";
+            for (int j = 0; j < temp.getGeneratie()-1; j++) {
+                Entry += "  ";
+            }
+            Entry += temp.getPersoonsgegevens();
+            Entry += System.getProperty("line.separator");
+            builder.append(Entry);
+        }
+        
         
         return builder.toString();
     }

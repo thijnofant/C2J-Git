@@ -45,10 +45,10 @@ public class StamboomTest extends TestCase {
         Gezin louiseAlleen = adm.addOngehuwdGezin(louise, null);
         Persoon mary = adm.addPersoon(Geslacht.VROUW, new String[]{"mary"}, "Vuiter",
                 "de", new GregorianCalendar(1943, Calendar.MAY, 25), "Rotterdam", louiseAlleen);
+        
         Gezin gijsEnMary = adm.addOngehuwdGezin(gijs, mary);
         Persoon jaron = adm.addPersoon(Geslacht.MAN, new String[]{"Jaron"}, "Swinkels",
                 "", new GregorianCalendar(1962, Calendar.JULY, 22), "Velp", gijsEnMary);
-
         assertEquals("afmeting boom onjuist", 8, jaron.afmetingStamboom());
         String stamboomstring = jaron.stamboomAlsString();
         String[] regels = stamboomstring.split(System.getProperty("line.separator"));
