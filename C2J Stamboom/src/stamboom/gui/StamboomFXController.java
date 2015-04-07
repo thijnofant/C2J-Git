@@ -152,9 +152,6 @@ public class StamboomFXController extends StamboomController implements Initiali
             } else {
                 cbOuderlijkGezin.getSelectionModel().clearSelection();
             }
-
-            //todo opgave 3
-            //lvAlsOuderBetrokkenBij.setItems(persoon.getAlsOuderBetrokkenIn());
         }
     }
 
@@ -201,17 +198,33 @@ public class StamboomFXController extends StamboomController implements Initiali
     }
 
     public void setHuwdatum(Event evt) {
-        // todo opgave 3
-
+        Gezin gezin = (Gezin)cbGezinnen.getSelectionModel().getSelectedItem();
+        SimpleDateFormat df = new SimpleDateFormat("dd-mm-yyyy");
+        Calendar huwdat = Calendar.getInstance();
+        try {
+            huwdat.setTime(df.parse(tfHuwelijk.textProperty().getValue()));
+            gezin.setHuwelijk(huwdat);
+        } catch (ParseException ex) {
+            System.out.println("Date conversion failed.");
+            return;
+        }
     }
 
     public void setScheidingsdatum(Event evt) {
-        // todo opgave 3
-
+        Gezin gezin = (Gezin)cbGezinnen.getSelectionModel().getSelectedItem();
+        SimpleDateFormat df = new SimpleDateFormat("dd-mm-yyyy");
+        Calendar scheidat = Calendar.getInstance();
+        try {
+            scheidat.setTime(df.parse(tfScheiding.textProperty().getValue()));
+            gezin.setScheiding(scheidat);
+        } catch (ParseException ex) {
+            System.out.println("Date conversion failed.");
+            return;
+        }
     }
 
     public void cancelPersoonInvoer(Event evt) {
-        // todo opgave 3
+        clearTabPersoonInvoer();
 
     }
 
