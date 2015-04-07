@@ -10,8 +10,8 @@ public class Administratie implements Serializable {
     //************************datavelden*************************************
     private int nextGezinsNr;
     private int nextPersNr;
-    private final List<Persoon> personen;
-    private final List<Gezin> gezinnen;
+    private ObservableList<Persoon> personen;
+    private ObservableList<Gezin> gezinnen;
 
     //***********************constructoren***********************************
     /**
@@ -22,8 +22,10 @@ public class Administratie implements Serializable {
     public Administratie() {
         this.nextGezinsNr = 1;
         this.nextPersNr = 1;
-        this.personen = new ArrayList<>();
-        this.gezinnen = new ArrayList<>();
+        ArrayList<Persoon> personen1 = new ArrayList<>();
+        ArrayList<Gezin> gezinnen1 = new ArrayList<>();
+        personen = FXCollections.observableList(personen1);
+        gezinnen = FXCollections.observableList(gezinnen1);
     }
 
     //**********************methoden****************************************
@@ -106,21 +108,23 @@ public class Administratie implements Serializable {
      */
     public Gezin addOngehuwdGezin(Persoon ouder1, Persoon ouder2) {
 
-        if (ouder2 != null) {
-            if (ouder1 == ouder2) {
+        try {
+            Persoon ouder = ouder2;
+            if (ouder1 == ouder) {
                 return null;
             }
-            if (ouder2.getGebDat().after(Calendar.getInstance()) ) {
+            if (ouder.getGebDat().after(Calendar.getInstance()) ) {
             return null;
             }
             for (Gezin gez : gezinnen) {
                 if (ouder1.beschrijving().equals(gez.getOuder1().beschrijving())
                         || ouder1.beschrijving().equals(gez.getOuder2().beschrijving())
-                        || ouder2.beschrijving().equals(gez.getOuder1().beschrijving())
-                        || ouder2.beschrijving().equals(gez.getOuder2().beschrijving())) {
+                        || ouder.beschrijving().equals(gez.getOuder1().beschrijving())
+                        || ouder.beschrijving().equals(gez.getOuder2().beschrijving())) {
                     return null;
                 }
             }
+        } catch (Exception e) {
         }
         if (ouder1.getGebDat().after(Calendar.getInstance())) {
             return null;
@@ -147,7 +151,7 @@ public class Administratie implements Serializable {
         if (ouder2 != null) {
             ouder2.wordtOuderIn(gezin);
         }
-
+        
         return gezin;
     }
 
@@ -315,8 +319,7 @@ public class Administratie implements Serializable {
      * @return de geregistreerde personen
      */
     public ObservableList<Persoon> getPersonen() {
-         ObservableList<Persoon> oListPersonen = FXCollections.observableArrayList(this.personen);
-         return oListPersonen;
+         return personen;
     }
 
     /**
@@ -370,8 +373,7 @@ public class Administratie implements Serializable {
      * @return de geregistreerde gezinnen
      */
     public ObservableList<Gezin> getGezinnen() {
-        ObservableList<Gezin> oListGezinnen = FXCollections.observableArrayList(this.gezinnen);
-        return oListGezinnen;
+        return gezinnen;
     }
 
     /**
