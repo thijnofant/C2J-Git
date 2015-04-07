@@ -4,6 +4,7 @@
  */
 package stamboom.gui;
 
+import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -295,17 +296,17 @@ public class StamboomFXController extends StamboomController implements Initiali
         initComboboxes();
     }
 
-    public void openStamboom(Event evt) {
+    public void openStamboom(Event evt) throws IOException {
         // todo opgave 3
-
+        this.controller.loadFromDatabase();
     }
 
-    public void saveStamboom(Event evt) {
+    public void saveStamboom(Event evt) throws IOException {
         // todo opgave 3
-
+        this.controller.saveToDatabase();
     }
 
-    public void closeApplication(Event evt) {
+    public void closeApplication(Event evt) throws IOException {
         saveStamboom(evt);
         getStage().close();
     }
