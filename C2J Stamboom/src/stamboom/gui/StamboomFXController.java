@@ -345,15 +345,10 @@ public class StamboomFXController extends StamboomController implements Initiali
     }
 
     private void clearTabGezinInvoer() {
-<<<<<<< HEAD
         cbOuder1Invoer.getSelectionModel().clearSelection();
         cbOuder2Invoer.getSelectionModel().clearSelection();
         tfHuwelijkInvoer.clear();
         tfScheidingInvoer.clear();   
-=======
-        //todo opgave 3
-
->>>>>>> origin/master
     }
 
     private void clearTabPersoon() {
