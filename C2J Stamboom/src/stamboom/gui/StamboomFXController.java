@@ -115,7 +115,7 @@ public class StamboomFXController extends StamboomController implements Initiali
         controller.getAdministratie().getPersonen().addListener(new ListChangeListener() {
             @Override
             public void onChanged(ListChangeListener.Change c) {
-                cbPersonen = new ComboBox(controller.getAdministratie().getPersonen());
+                cbPersonen.setItems(controller.getAdministratie().getPersonen());
             }
         });
 

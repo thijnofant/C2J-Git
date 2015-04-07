@@ -10,8 +10,8 @@ public class Administratie implements Serializable {
     //************************datavelden*************************************
     private int nextGezinsNr;
     private int nextPersNr;
-    private final List<Persoon> personen;
-    private final List<Gezin> gezinnen;
+    private ObservableList<Persoon> personen;
+    private ObservableList<Gezin> gezinnen;
 
     //***********************constructoren***********************************
     /**
@@ -22,8 +22,10 @@ public class Administratie implements Serializable {
     public Administratie() {
         this.nextGezinsNr = 1;
         this.nextPersNr = 1;
-        this.personen = new ArrayList<>();
-        this.gezinnen = new ArrayList<>();
+        ArrayList<Persoon> personen1 = new ArrayList<>();
+        ArrayList<Gezin> gezinnen1 = new ArrayList<>();
+        personen = FXCollections.observableList(personen1);
+        gezinnen = FXCollections.observableList(gezinnen1);
     }
 
     //**********************methoden****************************************
@@ -315,8 +317,7 @@ public class Administratie implements Serializable {
      * @return de geregistreerde personen
      */
     public ObservableList<Persoon> getPersonen() {
-         ObservableList<Persoon> oListPersonen = FXCollections.observableArrayList(this.personen);
-         return oListPersonen;
+         return personen;
     }
 
     /**
@@ -370,8 +371,7 @@ public class Administratie implements Serializable {
      * @return de geregistreerde gezinnen
      */
     public ObservableList<Gezin> getGezinnen() {
-        ObservableList<Gezin> oListGezinnen = FXCollections.observableArrayList(this.gezinnen);
-        return oListGezinnen;
+        return gezinnen;
     }
 
     /**
