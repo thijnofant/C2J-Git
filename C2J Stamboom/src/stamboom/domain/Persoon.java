@@ -310,8 +310,15 @@ public class Persoon implements Serializable{
      * grootouders etc); de persoon zelf telt ook mee
      */
     public int afmetingStamboom() {
-        //todo opgave 2
-        return -1;
+        //todo opgave 2 Done
+        int reval = 1;
+        if (this.ouderlijkGezin.getOuder1() != null) {
+            reval+= this.ouderlijkGezin.getOuder1().afmetingStamboom();
+        }
+        if (this.ouderlijkGezin.getOuder2() != null) {
+            reval+= this.ouderlijkGezin.getOuder2().afmetingStamboom();
+        }
+        return reval;
     }
 
     /**
