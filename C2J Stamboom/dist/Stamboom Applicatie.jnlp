@@ -12,8 +12,8 @@
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
     <jar href="StamboomProject.jar" size="46467" download="eager" />
-    <jar href="lib/junit-4.10.jar" size="281015" download="eager" />
-    <jar href="lib/mysql-connector-java-5.1.23-bin.jar" size="860447" download="eager" />
+    <jar href="lib/junit-4.10.jar" size="281018" download="eager" />
+    <jar href="lib/mysql-connector-java-5.1.23-bin.jar" size="860450" download="eager" />
   </resources>
 <security>
   <all-permissions/>

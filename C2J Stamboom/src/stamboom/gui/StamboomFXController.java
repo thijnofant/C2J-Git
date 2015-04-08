@@ -123,7 +123,7 @@ public class StamboomFXController extends StamboomController implements Initiali
 
         cbGezinnen.setItems(this.controller.getAdministratie().getGezinnen());
         cbOuderlijkGezin1.setItems(this.controller.getAdministratie().getGezinnen());
-        controller.getAdministratie().getPersonen().addListener(new ListChangeListener() {
+        controller.getAdministratie().getGezinnen().addListener(new ListChangeListener() {
             @Override
             public void onChanged(ListChangeListener.Change c) {
                 cbGezinnen.setItems(controller.getAdministratie().getGezinnen());
