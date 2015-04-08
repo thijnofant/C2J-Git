@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Thijn" name="stamboom.domain.DomeinTest" skipped="0" tests="11" time="0.077" timestamp="2015-04-07T13:02:36">
+<testsuite errors="1" failures="0" hostname="Thijn" name="stamboom.storage.SerialisatieTest" skipped="0" tests="1" time="0.486" timestamp="2015-04-07T18:18:40">
   <properties>
     <property name="netbeans.autoupdate.country" value="US" />
     <property name="javafx.binarycss" value="false" />
@@ -8,7 +8,7 @@
     <property name="manifest.custom.codebase" value="*" />
     <property name="javafx.signing.blob" value="false" />
     <property name="libs.junit.javadoc" value="D:\Program Files\NetBeans 8.0.2\java\docs\junit-3.8.2-api.zip" />
-    <property name="javac.includes" value="stamboom/domain/DomeinTest.java" />
+    <property name="javac.includes" value="stamboom/storage/SerialisatieTest.java" />
     <property name="ant.core.lib" value="D:\Program Files\NetBeans 8.0.2\extide\ant\lib\ant.jar" />
     <property name="javadoc.windowtitle" value="" />
     <property name="javafx.preloader.enabled" value="false" />
@@ -49,7 +49,7 @@
     <property name="user.name" value="Thijn" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner stamboom.domain.DomeinTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\GitHub\C2J-Git\C2J Stamboom\build\test\results\TEST-stamboom.domain.DomeinTest.xml crashfile=D:\GitHub\C2J-Git\C2J Stamboom\build\junitvmwatcher300200351186209605.properties propsfile=D:\GitHub\C2J-Git\C2J Stamboom\build\junit3605590592970616018.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner stamboom.storage.SerialisatieTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\GitHub\C2J-Git\C2J Stamboom\build\test\results\TEST-stamboom.storage.SerialisatieTest.xml crashfile=D:\GitHub\C2J-Git\C2J Stamboom\build\junitvmwatcher1109670723343349103.properties propsfile=D:\GitHub\C2J-Git\C2J Stamboom\build\junit4916706760732827542.properties" />
     <property name="auxiliary.org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.wrapAnnotations" value="WRAP_NEVER" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
@@ -69,7 +69,7 @@
     <property name="build.compiler.emacs" value="true" />
     <property name="javafx.deploy.includeDT" value="true" />
     <property name="java.endorsed.dirs" value="D:\Program Files\Java\jdk1.8.0_31\jre\lib\endorsed" />
-    <property name="test.includes" value="stamboom/domain/DomeinTest.java" />
+    <property name="test.includes" value="stamboom/storage/SerialisatieTest.java" />
     <property name="netbeans.dynamic.classpath" value="D:\Program Files\NetBeans 8.0.2\platform\core\core.jar;D:\Program Files\NetBeans 8.0.2\platform\core\org-openide-filesystems.jar;D:\Program Files\NetBeans 8.0.2\platform\core\locale\core_ja.jar;D:\Program Files\NetBeans 8.0.2\platform\core\locale\core_pt_BR.jar;D:\Program Files\NetBeans 8.0.2\platform\core\locale\core_ru.jar;D:\Program Files\NetBeans 8.0.2\platform\core\locale\core_zh_CN.jar;D:\Program Files\NetBeans 8.0.2\platform\core\locale\org-openide-filesystems_ja.jar;D:\Program Files\NetBeans 8.0.2\platform\core\locale\org-openide-filesystems_pt_BR.jar;D:\Program Files\NetBeans 8.0.2\platform\core\locale\org-openide-filesystems_ru.jar;D:\Program Files\NetBeans 8.0.2\platform\core\locale\org-openide-filesystems_zh_CN.jar;D:\Program Files\NetBeans 8.0.2\nb\core\org-netbeans-upgrader.jar;D:\Program Files\NetBeans 8.0.2\nb\core\locale\core_nb.jar;D:\Program Files\NetBeans 8.0.2\nb\core\locale\core_nb_ja.jar;D:\Program Files\NetBeans 8.0.2\nb\core\locale\core_nb_pt_BR.jar;D:\Program Files\NetBeans 8.0.2\nb\core\locale\core_nb_ru.jar;D:\Program Files\NetBeans 8.0.2\nb\core\locale\core_nb_zh_CN.jar;D:\Program Files\NetBeans 8.0.2\nb\core\locale\org-netbeans-upgrader_ja.jar;D:\Program Files\NetBeans 8.0.2\nb\core\locale\org-netbeans-upgrader_pt_BR.jar;D:\Program Files\NetBeans 8.0.2\nb\core\locale\org-netbeans-upgrader_ru.jar;D:\Program Files\NetBeans 8.0.2\nb\core\locale\org-netbeans-upgrader_zh_CN.jar" />
     <property name="jnlp.enabled" value="false" />
     <property name="java.vm.specification.version" value="1.8" />
@@ -84,7 +84,7 @@
     <property name="javac.debug" value="true" />
     <property name="javadoc.splitindex" value="true" />
     <property name="file.separator" value="\" />
-    <property name="javac.includesfile.binary" value="D:\GitHub\C2J-Git\C2J Stamboom\null1740747310" />
+    <property name="javac.includesfile.binary" value="D:\GitHub\C2J-Git\C2J Stamboom\null1982875142" />
     <property name="libs.junit_4.maven-pom" value="" />
     <property name="mkdist.disabled" value="false" />
     <property name="javac.test.processorpath" value="D:\Program Files\NetBeans 8.0.2\ide\modules\ext\mysql-connector-java-5.1.23-bin.jar:D:\Program Files\NetBeans 8.0.2\platform\modules\ext\junit-4.10.jar:D:\Program Files\Java\jdk1.8.0_31\jre/lib/javaws.jar:D:\Program Files\Java\jdk1.8.0_31\jre/lib/deploy.jar:D:\Program Files\Java\jdk1.8.0_31\jre/lib/plugin.jar:build/classes" />
@@ -98,8 +98,7 @@
     <property name="libs.junit.classpath" value="D:\Program Files\NetBeans 8.0.2\java\modules\ext\junit-3.8.2.jar" />
     <property name="libs.hibernate4-persistencemodelgen.javadoc" value="" />
     <property name="libs.jaxb.javadoc" value="D:\Program Files\NetBeans 8.0.2\ide\docs\jaxb-api-doc.zip" />
-    <property name="org.openide.awt.SwingBrowserImpl.do-not-block-awt" value="false" />
-    <property name="javac.includes.binary" value="D:\GitHub\C2J-Git\C2J Stamboom\build\test\classes\stamboom\domain\DomeinTest.class" />
+    <property name="javac.includes.binary" value="D:\GitHub\C2J-Git\C2J Stamboom\build\test\classes\stamboom\storage\SerialisatieTest.class" />
     <property name="ant.home" value="D:\Program Files\NetBeans 8.0.2\extide\ant" />
     <property name="libs.junit_4.src" value="D:\Program Files\NetBeans 8.0.2\java\docs\junit-4.10-sources.jar" />
     <property name="javafx.run.height" value="600" />
@@ -287,6 +286,7 @@
     <property name="sun.awt.keepWorkingSetOnMinimize" value="true" />
     <property name="libs.jpa20-persistence.src" value="" />
     <property name="auxiliary.org-netbeans-modules-editor-indent.CodeStyle.project.spaces-per-tab" value="4" />
+    <property name="ignore.failing.tests" value="true" />
     <property name="javafx.enable.concurrent.external.runs" value="false" />
     <property name="javafx.deploy.embedJNLP" value="true" />
     <property name="dist.dir" value="dist" />
@@ -328,7 +328,7 @@
     <property name="libs.hibernate4-support.maven-pom" value="" />
     <property name="javafx.deploy.allowoffline" value="true" />
     <property name="libs.JAXB-ENDORSED.classpath" value="D:\Program Files\NetBeans 8.0.2\ide\modules\ext\jaxb\api\jaxb-api.jar" />
-    <property name="nb.internal.action.name" value="run.single" />
+    <property name="nb.internal.action.name" value="test.single" />
     <property name="libs.eclipselink.classpath" value="D:\Program Files\NetBeans 8.0.2\java\modules\ext\eclipselink\eclipselink.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\eclipselink\javax.persistence_2.1.0.v201304241213.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\eclipselink\org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar" />
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
     <property name="libs.beans-binding.javadoc" value="D:\Program Files\NetBeans 8.0.2\java\docs\beansbinding-1.2.1-doc.zip" />
@@ -356,17 +356,79 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="javafx.deploy.installpermanently" value="false" />
   </properties>
-  <testcase classname="stamboom.domain.DomeinTest" name="testAddPersoon" time="0.021" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testSetOuders" time="0.002" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testGetNaam" time="0.001" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testAddHuwelijk" time="0.005" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testScheiding" time="0.001" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testGetPersoonEnPersonen" time="0.001" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testGetPersonenMetAchternaam" time="0.001" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testSetEnIsHuwelijk" time="0.001" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testHeeftGescheidenOuders" time="0.0" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testBeschrijvingGezin" time="0.001" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testAddOngehuwdGezin" time="0.002" />
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
+  <testcase classname="stamboom.storage.SerialisatieTest" name="testOpslag" time="0.367">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at stamboom.storage.SerialisatieTest.testOpslag(SerialisatieTest.java:68)
+</error>
+  </testcase>
+  <system-out><![CDATA[testOpslag
+false
+true
+Something went the f wrong
+Now Loading
+testOpslag
+true
+]]></system-out>
+  <system-err><![CDATA[java.io.NotSerializableException: com.sun.javafx.collections.ObservableListWrapper
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1548)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1509)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at stamboom.storage.SerializationMediator.save(SerializationMediator.java:85)
+	at stamboom.controller.StamboomController.serialize(StamboomController.java:55)
+	at stamboom.storage.SerialisatieTest.testOpslag(SerialisatieTest.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:243)
+	at junit.framework.TestSuite.run(TestSuite.java:238)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:532)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1179)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1030)
+java.io.WriteAbortedException: writing aborted; java.io.NotSerializableException: com.sun.javafx.collections.ObservableListWrapper
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1355)
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:1993)
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1918)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1801)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1351)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:371)
+	at stamboom.storage.SerializationMediator.load(SerializationMediator.java:51)
+	at stamboom.controller.StamboomController.deserialize(StamboomController.java:74)
+	at stamboom.storage.SerialisatieTest.testOpslag(SerialisatieTest.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:243)
+	at junit.framework.TestSuite.run(TestSuite.java:238)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:532)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1179)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1030)
+Caused by: java.io.NotSerializableException: com.sun.javafx.collections.ObservableListWrapper
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1548)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1509)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at stamboom.storage.SerializationMediator.save(SerializationMediator.java:85)
+	at stamboom.controller.StamboomController.serialize(StamboomController.java:55)
+	at stamboom.storage.SerialisatieTest.testOpslag(SerialisatieTest.java:53)
+	... 15 more
+]]></system-err>
 </testsuite>
