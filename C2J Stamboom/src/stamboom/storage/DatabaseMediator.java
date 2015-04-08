@@ -174,7 +174,7 @@ public class DatabaseMediator implements IStorageMediator {
             }
 
             try {
-                query = "UPDATE PERSONEN SET ouders = " + null;
+                query = "UPDATE PERSONEN SET ouders = NULL";
                 stat.executeUpdate(query);
             } catch (SQLException ex) {
                 System.out.println("3 " + ex.getMessage());
@@ -312,10 +312,10 @@ public class DatabaseMediator implements IStorageMediator {
 
     private void initConnection() throws SQLException {
         //opgave 4
-        String driver = "com.oracle.jdbc.Driver";
-        String url = "jdbc:oracle://localhost:1521/stamboom";
-        String username = "DBS22";
-        String password = "dbs22";
+        String driver = "oracle.jdbc.OracleDriver";
+        String url = "jdbc:oracle:thin:@fhictora01.fhict.local:1521:fhictora";
+        String username = "dbi298630";
+        String password = "MjUuCmAc2H";
         props.setProperty("driver", driver);
         props.setProperty("url", url);
         props.setProperty("username", username);
