@@ -56,6 +56,10 @@ public class Administratie implements Serializable {
             String tvoegsel, Calendar gebdat,
             String gebplaats, Gezin ouderlijkGezin) {
 
+        if (obsPersonen == null) {
+            obsPersonen = FXCollections.observableList(personen);
+        }
+        
         if (vnamen.length == 0) {
             throw new IllegalArgumentException("ten minste 1 voornaam");
         }
@@ -87,7 +91,6 @@ public class Administratie implements Serializable {
             ouderlijkGezin.breidUitMet(newPersoon);
         }
 
-        
         this.obsPersonen.add(newPersoon);
         this.nextPersNr += 1;
         
@@ -110,6 +113,10 @@ public class Administratie implements Serializable {
      */
     public Gezin addOngehuwdGezin(Persoon ouder1, Persoon ouder2) {
 
+        if (obsGezinnen == null) {
+            obsGezinnen = FXCollections.observableList(gezinnen);
+        }
+        
         try {
             Persoon ouder = ouder2;
             if (ouder1 == ouder) {
@@ -223,6 +230,10 @@ public class Administratie implements Serializable {
      */
     public Gezin addHuwelijk(Persoon ouder1, Persoon ouder2, Calendar huwdatum) {
         //todo opgave 1 DONE
+        if (obsGezinnen == null) {
+            obsGezinnen = FXCollections.observableList(gezinnen);
+        }
+        
         Gezin reGezin = null;
         if (ouder1.equals(ouder2)){ return null; }
         for (int i = 0; i < gezinnen.size(); i++)
