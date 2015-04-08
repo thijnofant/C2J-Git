@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Thijn" name="stamboom.domain.DomeinTest" skipped="0" tests="11" time="0.099" timestamp="2015-04-08T06:52:35">
+<testsuite errors="1" failures="0" hostname="Thijn" name="stamboom.storage.SerialisatieTest" skipped="0" tests="1" time="0.104" timestamp="2015-04-08T06:56:58">
   <properties>
     <property name="netbeans.autoupdate.country" value="US" />
     <property name="javafx.binarycss" value="false" />
@@ -8,7 +8,7 @@
     <property name="manifest.custom.codebase" value="*" />
     <property name="javafx.signing.blob" value="false" />
     <property name="libs.junit.javadoc" value="D:\Program Files\NetBeans 8.0.2\java\docs\junit-3.8.2-api.zip" />
-    <property name="javac.includes" value="stamboom/domain/DomeinTest.java" />
+    <property name="javac.includes" value="stamboom/storage/SerialisatieTest.java" />
     <property name="ant.core.lib" value="D:\Program Files\NetBeans 8.0.2\extide\ant\lib\ant.jar" />
     <property name="javadoc.windowtitle" value="" />
     <property name="javafx.preloader.enabled" value="false" />
@@ -49,7 +49,7 @@
     <property name="user.name" value="Thijn" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner stamboom.domain.DomeinTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\GitHub\C2J-Git\C2J Stamboom\build\test\results\TEST-stamboom.domain.DomeinTest.xml crashfile=D:\GitHub\C2J-Git\C2J Stamboom\build\junitvmwatcher3926200958666739370.properties propsfile=D:\GitHub\C2J-Git\C2J Stamboom\build\junit7235732814790462455.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner stamboom.storage.SerialisatieTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\GitHub\C2J-Git\C2J Stamboom\build\test\results\TEST-stamboom.storage.SerialisatieTest.xml crashfile=D:\GitHub\C2J-Git\C2J Stamboom\build\junitvmwatcher8490783832766443538.properties propsfile=D:\GitHub\C2J-Git\C2J Stamboom\build\junit2999120204802710204.properties" />
     <property name="auxiliary.org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.wrapAnnotations" value="WRAP_NEVER" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
@@ -69,7 +69,7 @@
     <property name="build.compiler.emacs" value="true" />
     <property name="javafx.deploy.includeDT" value="true" />
     <property name="java.endorsed.dirs" value="D:\Program Files\Java\jdk1.8.0_31\jre\lib\endorsed" />
-    <property name="test.includes" value="stamboom/domain/DomeinTest.java" />
+    <property name="test.includes" value="stamboom/storage/SerialisatieTest.java" />
     <property name="netbeans.dynamic.classpath" value="D:\Program Files\NetBeans 8.0.2\platform\core\core.jar;D:\Program Files\NetBeans 8.0.2\platform\core\org-openide-filesystems.jar;D:\Program Files\NetBeans 8.0.2\platform\core\locale\core_ja.jar;D:\Program Files\NetBeans 8.0.2\platform\core\locale\core_pt_BR.jar;D:\Program Files\NetBeans 8.0.2\platform\core\locale\core_ru.jar;D:\Program Files\NetBeans 8.0.2\platform\core\locale\core_zh_CN.jar;D:\Program Files\NetBeans 8.0.2\platform\core\locale\org-openide-filesystems_ja.jar;D:\Program Files\NetBeans 8.0.2\platform\core\locale\org-openide-filesystems_pt_BR.jar;D:\Program Files\NetBeans 8.0.2\platform\core\locale\org-openide-filesystems_ru.jar;D:\Program Files\NetBeans 8.0.2\platform\core\locale\org-openide-filesystems_zh_CN.jar;D:\Program Files\NetBeans 8.0.2\nb\core\org-netbeans-upgrader.jar;D:\Program Files\NetBeans 8.0.2\nb\core\locale\core_nb.jar;D:\Program Files\NetBeans 8.0.2\nb\core\locale\core_nb_ja.jar;D:\Program Files\NetBeans 8.0.2\nb\core\locale\core_nb_pt_BR.jar;D:\Program Files\NetBeans 8.0.2\nb\core\locale\core_nb_ru.jar;D:\Program Files\NetBeans 8.0.2\nb\core\locale\core_nb_zh_CN.jar;D:\Program Files\NetBeans 8.0.2\nb\core\locale\org-netbeans-upgrader_ja.jar;D:\Program Files\NetBeans 8.0.2\nb\core\locale\org-netbeans-upgrader_pt_BR.jar;D:\Program Files\NetBeans 8.0.2\nb\core\locale\org-netbeans-upgrader_ru.jar;D:\Program Files\NetBeans 8.0.2\nb\core\locale\org-netbeans-upgrader_zh_CN.jar" />
     <property name="jnlp.enabled" value="false" />
     <property name="java.vm.specification.version" value="1.8" />
@@ -84,7 +84,7 @@
     <property name="javac.debug" value="true" />
     <property name="javadoc.splitindex" value="true" />
     <property name="file.separator" value="\" />
-    <property name="javac.includesfile.binary" value="D:\GitHub\C2J-Git\C2J Stamboom\null1131951050" />
+    <property name="javac.includesfile.binary" value="D:\GitHub\C2J-Git\C2J Stamboom\null811230824" />
     <property name="libs.junit_4.maven-pom" value="" />
     <property name="mkdist.disabled" value="false" />
     <property name="javac.test.processorpath" value="D:\Program Files\NetBeans 8.0.2\ide\modules\ext\mysql-connector-java-5.1.23-bin.jar:D:\Program Files\NetBeans 8.0.2\platform\modules\ext\junit-4.10.jar:D:\Program Files\Java\jdk1.8.0_31\jre/lib/javaws.jar:D:\Program Files\Java\jdk1.8.0_31\jre/lib/deploy.jar:D:\Program Files\Java\jdk1.8.0_31\jre/lib/plugin.jar:build/classes" />
@@ -98,7 +98,7 @@
     <property name="libs.junit.classpath" value="D:\Program Files\NetBeans 8.0.2\java\modules\ext\junit-3.8.2.jar" />
     <property name="libs.hibernate4-persistencemodelgen.javadoc" value="" />
     <property name="libs.jaxb.javadoc" value="D:\Program Files\NetBeans 8.0.2\ide\docs\jaxb-api-doc.zip" />
-    <property name="javac.includes.binary" value="D:\GitHub\C2J-Git\C2J Stamboom\build\test\classes\stamboom\domain\DomeinTest.class" />
+    <property name="javac.includes.binary" value="D:\GitHub\C2J-Git\C2J Stamboom\build\test\classes\stamboom\storage\SerialisatieTest.class" />
     <property name="ant.home" value="D:\Program Files\NetBeans 8.0.2\extide\ant" />
     <property name="libs.junit_4.src" value="D:\Program Files\NetBeans 8.0.2\java\docs\junit-4.10-sources.jar" />
     <property name="javafx.run.height" value="600" />
@@ -356,18 +356,22 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="javafx.deploy.installpermanently" value="false" />
   </properties>
-  <testcase classname="stamboom.domain.DomeinTest" name="testAddPersoon" time="0.017" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testGetNaam" time="0.002" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testSetOuders" time="0.0" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testAddHuwelijk" time="0.004" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testScheiding" time="0.0" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testGetPersonenMetAchternaam" time="0.0" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testHeeftGescheidenOuders" time="0.0" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testSetEnIsHuwelijk" time="0.001" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testGetPersoonEnPersonen" time="0.029" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testBeschrijvingGezin" time="0.001" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testAddOngehuwdGezin" time="0.002" />
-  <system-out><![CDATA[2
+  <testcase classname="stamboom.storage.SerialisatieTest" name="testOpslag" time="0.057">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at stamboom.domain.Administratie.addPersoon(Administratie.java:91)
+	at stamboom.storage.SerialisatieTest.testOpslag(SerialisatieTest.java:73)
+</error>
+  </testcase>
+  <system-out><![CDATA[testOpslag
+false
+true
+Data was saved to testOpslag
+Now Loading
+testOpslag
+true
+Deserialized Administration...
+aantal gezinnen: 1
+stamboom.domain.Administratie@736e9adb
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

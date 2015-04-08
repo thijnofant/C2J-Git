@@ -67,7 +67,9 @@ public class SerialisatieTest extends TestCase {
         adm2 = controller.getAdministratie();
         assertEquals("aantal personen onjuist", adm.aantalGeregistreerdePersonen(), adm2.aantalGeregistreerdePersonen());
         assertEquals("aantal gezinnen onjuist", adm.aantalGeregistreerdeGezinnen(), adm2.aantalGeregistreerdeGezinnen());
-
+        //todo test shit delete latern
+        System.out.println(adm2.toString());
+        //
         Persoon jan = adm2.addPersoon(Geslacht.MAN, new String[]{"Jan"}, "Boven",
                 "van", new GregorianCalendar(1975, Calendar.APRIL, 23), "Bergen Op Zoom", null);
         assertEquals("nummering van personen onjuist", adm.aantalGeregistreerdePersonen() + 1, jan.getNr());

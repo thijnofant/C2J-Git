@@ -253,7 +253,6 @@ public class Administratie implements Serializable {
             reGezin = new Gezin(this.nextGezinsNr, ouder1, ouder2);
             this.nextGezinsNr += 1;
             reGezin.setHuwelijk(huwdatum);
-            this.gezinnen.add(reGezin);
             this.obsGezinnen.add(reGezin);
             if(ouder1 != null){
                 ouder1.wordtOuderIn(reGezin);
