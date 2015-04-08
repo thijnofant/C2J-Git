@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="1" failures="0" hostname="Thijn" name="stamboom.storage.SerialisatieTest" skipped="0" tests="1" time="0.104" timestamp="2015-04-08T06:56:58">
+<testsuite errors="0" failures="0" hostname="Thijn" name="stamboom.storage.SerialisatieTest" skipped="0" tests="1" time="0.134" timestamp="2015-04-08T07:41:24">
   <properties>
     <property name="netbeans.autoupdate.country" value="US" />
     <property name="javafx.binarycss" value="false" />
@@ -49,7 +49,7 @@
     <property name="user.name" value="Thijn" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner stamboom.storage.SerialisatieTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\GitHub\C2J-Git\C2J Stamboom\build\test\results\TEST-stamboom.storage.SerialisatieTest.xml crashfile=D:\GitHub\C2J-Git\C2J Stamboom\build\junitvmwatcher8490783832766443538.properties propsfile=D:\GitHub\C2J-Git\C2J Stamboom\build\junit2999120204802710204.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner stamboom.storage.SerialisatieTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\GitHub\C2J-Git\C2J Stamboom\build\test\results\TEST-stamboom.storage.SerialisatieTest.xml crashfile=D:\GitHub\C2J-Git\C2J Stamboom\build\junitvmwatcher5000517825850528637.properties propsfile=D:\GitHub\C2J-Git\C2J Stamboom\build\junit7757328782732033838.properties" />
     <property name="auxiliary.org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.wrapAnnotations" value="WRAP_NEVER" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
@@ -84,7 +84,7 @@
     <property name="javac.debug" value="true" />
     <property name="javadoc.splitindex" value="true" />
     <property name="file.separator" value="\" />
-    <property name="javac.includesfile.binary" value="D:\GitHub\C2J-Git\C2J Stamboom\null811230824" />
+    <property name="javac.includesfile.binary" value="D:\GitHub\C2J-Git\C2J Stamboom\null939878491" />
     <property name="libs.junit_4.maven-pom" value="" />
     <property name="mkdist.disabled" value="false" />
     <property name="javac.test.processorpath" value="D:\Program Files\NetBeans 8.0.2\ide\modules\ext\mysql-connector-java-5.1.23-bin.jar:D:\Program Files\NetBeans 8.0.2\platform\modules\ext\junit-4.10.jar:D:\Program Files\Java\jdk1.8.0_31\jre/lib/javaws.jar:D:\Program Files\Java\jdk1.8.0_31\jre/lib/deploy.jar:D:\Program Files\Java\jdk1.8.0_31\jre/lib/plugin.jar:build/classes" />
@@ -356,12 +356,7 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="javafx.deploy.installpermanently" value="false" />
   </properties>
-  <testcase classname="stamboom.storage.SerialisatieTest" name="testOpslag" time="0.057">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at stamboom.domain.Administratie.addPersoon(Administratie.java:91)
-	at stamboom.storage.SerialisatieTest.testOpslag(SerialisatieTest.java:73)
-</error>
-  </testcase>
+  <testcase classname="stamboom.storage.SerialisatieTest" name="testOpslag" time="0.092" />
   <system-out><![CDATA[testOpslag
 false
 true
@@ -371,7 +366,6 @@ testOpslag
 true
 Deserialized Administration...
 aantal gezinnen: 1
-stamboom.domain.Administratie@736e9adb
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

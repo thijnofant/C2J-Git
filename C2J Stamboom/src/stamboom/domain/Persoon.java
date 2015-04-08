@@ -310,7 +310,7 @@ public class Persoon implements Serializable{
      * grootouders etc); de persoon zelf telt ook mee
      */
     public int afmetingStamboom() {
-        //todo opgave 2 Done?
+        //todo opgave 2 DONE
         int reval = 1;
         try {
             Persoon ouder1 = this.ouderlijkGezin.getOuder1();
@@ -339,7 +339,7 @@ public class Persoon implements Serializable{
      * toegewezen;
      */
     void voegJouwStamboomToe(ArrayList<PersoonMetGeneratie> lijst, int g) {
-        //todo opgave 2 done?
+        //todo opgave 2 DONE
         PersoonMetGeneratie temp = new PersoonMetGeneratie(this.toString(), g);
         lijst.add(temp);
         
@@ -381,7 +381,7 @@ public class Persoon implements Serializable{
      */
     public String stamboomAlsString() {
         StringBuilder builder = new StringBuilder();
-        //todo opgave 2 done
+        //todo opgave 2 DONE
         ArrayList<PersoonMetGeneratie> list = new ArrayList<>();
         
         this.voegJouwStamboomToe(list, 1);
