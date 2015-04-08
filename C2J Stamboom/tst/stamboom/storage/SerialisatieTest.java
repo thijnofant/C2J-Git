@@ -67,20 +67,11 @@ public class SerialisatieTest extends TestCase {
         adm2 = controller.getAdministratie();
         assertEquals("aantal personen onjuist", adm.aantalGeregistreerdePersonen(), adm2.aantalGeregistreerdePersonen());
         assertEquals("aantal gezinnen onjuist", adm.aantalGeregistreerdeGezinnen(), adm2.aantalGeregistreerdeGezinnen());
-        //todo test shit delete latern
-        System.out.println(adm2.toString());
-        //
         Persoon jan = adm2.addPersoon(Geslacht.MAN, new String[]{"Jan"}, "Boven",
                 "van", new GregorianCalendar(1975, Calendar.APRIL, 23), "Bergen Op Zoom", null);
         assertEquals("nummering van personen onjuist", adm.aantalGeregistreerdePersonen() + 1, jan.getNr());
         Gezin rosaEnJan = adm2.addOngehuwdGezin(rosa, jan);
         assertEquals("nummering van gezinnen onjuist", adm.aantalGeregistreerdeGezinnen() + 1, rosaEnJan.getNr());
-        //todo test shit
-        System.out.println("Aantal geregistreerde personen: "+adm.aantalGeregistreerdePersonen());
-        System.out.println("admin1: "+adm.toString());
-        System.out.println("admin2: "+adm2.toString());
-        System.out.println("Aantal personen: "+adm2.getPersonen().toString());
-        //
         assertEquals("aantal personen in observable personen onjuist", adm.aantalGeregistreerdePersonen() + 1,
                 adm2.getPersonen().size());
         assertTrue("File Deletion failed",testOpslag.delete());
