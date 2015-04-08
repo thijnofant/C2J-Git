@@ -24,6 +24,7 @@ public class StamboomController {
     public StamboomController() {
         admin = new Administratie();
         storageMediator = new SerializationMediator();
+        databaseMediator = new DatabaseMediator();
     }
 
     public Administratie getAdministratie() {
@@ -77,13 +78,11 @@ public class StamboomController {
     
     // opgave 4
     private void initDatabaseMedium() throws IOException {
-//        if (!(storageMediator instanceof DatabaseMediator)) {
-//            Properties props = new Properties();
-//            try (FileInputStream in = new FileInputStream("database.properties")) {
-//                props.load(in);
-//            }
-//            storageMediator = new DatabaseMediator(props);
-//        }
+            Properties props = new Properties();
+            try (FileInputStream in = new FileInputStream("database.properties")) {
+                props.load(in);
+            }
+            databaseMediator.configure(props);        
     }
     
     /**
@@ -93,6 +92,8 @@ public class StamboomController {
      */
     public void loadFromDatabase() throws IOException {
         //todo opgave 4
+        initDatabaseMedium();
+        databaseMediator.load();
     }
 
     /**
@@ -102,6 +103,8 @@ public class StamboomController {
      */
     public void saveToDatabase() throws IOException {
         //todo opgave 4
+        //initDatabaseMedium();
+        databaseMediator.save(this.admin);
     }
 
 }
