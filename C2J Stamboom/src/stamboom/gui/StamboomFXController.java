@@ -113,7 +113,9 @@ public class StamboomFXController extends StamboomController implements Initiali
         namen = new String[]{"test"};
         GregorianCalendar GC = new GregorianCalendar();
         controller.getAdministratie().addPersoon(Geslacht.MAN, namen, "Test", "De", GC, "Testland", null);
-        controller.getAdministratie().addPersoon(Geslacht.MAN, namen, "Test", "van", GC, "Testland", null);
+        controller.getAdministratie().addPersoon(Geslacht.MAN, namen, "KAPPA", "van", GC, "Testland", null);
+        controller.getAdministratie().addPersoon(Geslacht.MAN, namen, "yolo", "haha", GC, "KAPPA", null);
+        controller.getAdministratie().addPersoon(Geslacht.MAN, namen, "Testerino", "", GC, "Testerino", null);
         //Test: Geslaagd.
 
         cbPersonen.setItems(this.controller.getAdministratie().getPersonen());
@@ -190,21 +192,32 @@ public class StamboomFXController extends StamboomController implements Initiali
     }
 
     private void showGezin(Gezin gezin) {
-        if(gezin == null) {
-            clearTabGezin();
+        if(gezin == null) {       
             return;
         }
         if(!(gezin.getOuder1() == null)) {
             tfOuder1.setText(gezin.getOuder1().toString());
         }
+        else {
+            tfOuder1.clear();
+        }
         if(!(gezin.getOuder2() == null)) {
             tfOuder2.setText(gezin.getOuder2().toString());
         }
+        else {
+            tfOuder2.clear();
+        }
         if(!(gezin.getHuwelijksdatum() == null)) {
-            tfHuwelijk.setText(gezin.getHuwelijksdatum().toString());
+            tfHuwelijk.setText(StringUtilities.datumString(gezin.getHuwelijksdatum()));
+        }
+        else {
+            tfHuwelijk.clear();
         }
         if(!(gezin.getScheidingsdatum() == null)) {
-            tfScheiding.setText(gezin.getScheidingsdatum().toString());
+            tfScheiding.setText(StringUtilities.datumString(gezin.getScheidingsdatum()));
+        }
+        else {
+            tfScheiding.clear();
         }
     }
 
@@ -214,7 +227,7 @@ public class StamboomFXController extends StamboomController implements Initiali
         Calendar huwdat = Calendar.getInstance();
         try {
             huwdat.setTime(df.parse(tfHuwelijk.textProperty().getValue()));
-            gezin.setHuwelijk(huwdat);
+            controller.getAdministratie().getGezin(gezin.getNr()).setHuwelijk(huwdat);
         } catch (ParseException ex) {
             System.out.println("Date conversion failed.");
             return;
@@ -227,7 +240,7 @@ public class StamboomFXController extends StamboomController implements Initiali
         Calendar scheidat = Calendar.getInstance();
         try {
             scheidat.setTime(df.parse(tfScheiding.textProperty().getValue()));
-            gezin.setScheiding(scheidat);
+            controller.getAdministratie().getGezin(gezin.getNr()).setScheiding(scheidat);
         } catch (ParseException ex) {
             System.out.println("Date conversion failed.");
             return;
