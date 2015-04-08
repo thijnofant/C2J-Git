@@ -10,8 +10,10 @@ public class Administratie implements Serializable {
     //************************datavelden*************************************
     private int nextGezinsNr;
     private int nextPersNr;
-    private ObservableList<Persoon> personen;
-    private ObservableList<Gezin> gezinnen;
+    private List<Persoon> personen;
+    private List<Gezin> gezinnen;
+    private transient ObservableList<Persoon> obsPersonen;
+    private transient ObservableList<Gezin> obsGezinnen;
 
     //***********************constructoren***********************************
     /**
@@ -22,12 +24,12 @@ public class Administratie implements Serializable {
     public Administratie() {
         this.nextGezinsNr = 1;
         this.nextPersNr = 1;
-        ArrayList<Persoon> personen1 = new ArrayList<>();
-        ArrayList<Gezin> gezinnen1 = new ArrayList<>();
-        personen = FXCollections.observableList(personen1);
-        gezinnen = FXCollections.observableList(gezinnen1);
+        personen = new ArrayList<>();
+        gezinnen = new ArrayList<>();
+        obsPersonen = FXCollections.observableList(personen);
+        obsGezinnen = FXCollections.observableList(gezinnen);
     }
-
+    
     //**********************methoden****************************************
     /**
      * er wordt een persoon met de gegeven parameters aangemaakt; de persoon
@@ -86,7 +88,7 @@ public class Administratie implements Serializable {
         }
 
         
-        this.personen.add(newPersoon);
+        this.obsPersonen.add(newPersoon);
         this.nextPersNr += 1;
         
         return newPersoon;
@@ -145,7 +147,7 @@ public class Administratie implements Serializable {
 
         Gezin gezin = new Gezin(nextGezinsNr, ouder1, ouder2);
         nextGezinsNr++;
-        gezinnen.add(gezin);
+        obsGezinnen.add(gezin);
 
         ouder1.wordtOuderIn(gezin);
         if (ouder2 != null) {
@@ -252,6 +254,7 @@ public class Administratie implements Serializable {
             this.nextGezinsNr += 1;
             reGezin.setHuwelijk(huwdatum);
             this.gezinnen.add(reGezin);
+            this.obsGezinnen.add(reGezin);
             if(ouder1 != null){
                 ouder1.wordtOuderIn(reGezin);
             }
@@ -319,7 +322,7 @@ public class Administratie implements Serializable {
      * @return de geregistreerde personen
      */
     public ObservableList<Persoon> getPersonen() {
-         return personen;
+         return FXCollections.unmodifiableObservableList(obsPersonen);
     }
 
     /**
@@ -373,7 +376,7 @@ public class Administratie implements Serializable {
      * @return de geregistreerde gezinnen
      */
     public ObservableList<Gezin> getGezinnen() {
-        return gezinnen;
+       return FXCollections.unmodifiableObservableList(obsGezinnen);
     }
 
     /**

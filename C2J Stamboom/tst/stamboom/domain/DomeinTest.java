@@ -509,6 +509,7 @@ public class DomeinTest extends TestCase{
 
         try {
             List<Persoon> personen = adm.getPersonen();
+            System.out.println(personen.size());
             personen.clear();
         } catch (Exception exc) {
         }

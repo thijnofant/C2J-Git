@@ -154,7 +154,7 @@ public class Gezin implements Serializable {
      * @param datum moet na de huwelijksdatum zijn.
      * @return true als scheiding kan worden voltrokken, anders false
      */
-    boolean setScheiding(Calendar datum) {
+    public boolean setScheiding(Calendar datum) {
         if (this.scheidingsdatum == null && huwelijksdatum != null
                 && datum.after(huwelijksdatum) && datum != null) {
             this.scheidingsdatum = datum;
@@ -173,7 +173,7 @@ public class Gezin implements Serializable {
      * @param datum de huwelijksdatum
      * @return false als huwelijk niet mocht worden voltrokken, anders true
      */
-    boolean setHuwelijk(Calendar datum) {
+    public boolean setHuwelijk(Calendar datum) {
 
         if (this.huwelijksdatum == null) {
 
