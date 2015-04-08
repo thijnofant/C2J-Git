@@ -130,30 +130,14 @@
                                        <children>
                                           <GridPane alignment="CENTER" hgap="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" vgap="2.0">
                                              <children>
-                                                <TextField fx:id="tfScheidingInvoer1" onAction="#setScheidingsdatum" prefHeight="-1.0" promptText="dd-mm-jjjj" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <TextField fx:id="tfScheiding" onAction="#setScheidingsdatum" prefHeight="-1.0" promptText="dd-mm-jjjj" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                                                 <Label alignment="CENTER_RIGHT" prefHeight="-1.0" prefWidth="-1.0" text="Scheiding op" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.margin="$x3" GridPane.rowIndex="3" />
-                                                <TextField fx:id="tfHuwelijkInvoer1" prefHeight="-1.0" promptText="dd-mm-jjjj" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                                <ComboBox fx:id="cbOuder2" prefHeight="-1.0" prefWidth="400.0" promptText="kies (zo mogelijk) 2e ouder" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                                   <items>
-                                                      <FXCollections fx:factory="observableArrayList">
-                                                         <String fx:value="Item 1" />
-                                                         <String fx:value="Item 2" />
-                                                         <String fx:value="Item 3" />
-                                                      </FXCollections>
-                                                   </items>
-                                                </ComboBox>
-                                                <ComboBox fx:id="cbOuder1" prefHeight="-1.0" prefWidth="400.0" promptText="kies 1e ouder" GridPane.columnIndex="1">
-                                                   <items>
-                                                      <FXCollections fx:factory="observableArrayList">
-                                                         <String fx:value="Item 1" />
-                                                         <String fx:value="Item 2" />
-                                                         <String fx:value="Item 3" />
-                                                      </FXCollections>
-                                                   </items>
-                                                </ComboBox>
+                                                <TextField fx:id="tfHuwelijk" prefHeight="-1.0" promptText="dd-mm-jjjj" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                                 <Label alignment="CENTER_RIGHT" prefHeight="-1.0" prefWidth="-1.0" text="Ouder 1" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.margin="$x3" GridPane.rowIndex="0" />
                                                 <Label alignment="CENTER_RIGHT" prefHeight="-1.0" prefWidth="-1.0" text="Ouder 2" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.margin="$x3" GridPane.rowIndex="1" />
                                                 <Label alignment="CENTER_RIGHT" prefHeight="-1.0" prefWidth="-1.0" text="Huwelijk op " GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.margin="$x3" GridPane.rowIndex="2" />
+                                                <TextField fx:id="tfOuder1" GridPane.columnIndex="1" />
+                                                <TextField fx:id="tfOuder2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                              </children>
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="108.0" />
@@ -194,7 +178,7 @@
                                     <TextField id="tfPersoonNr" fx:id="tfVoornamen1" prefWidth="200.0" GridPane.columnIndex="1" />
                                     <TextField id="tfPersoonNr" fx:id="tfTussenvoegsel1" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                     <TextField id="tfPersoonNr" fx:id="tfAchternaam1" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                    <ComboBox fx:id="cbOuderlijkGezin1" onAction="#setOuders" prefWidth="400.0" promptText="Kies (zo mogelijk) het ouderlijk gezin" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                    <ComboBox fx:id="cbOuderlijkGezin1" onAction="#setOuders" prefHeight="25.0" prefWidth="186.0" promptText="Kies (zo mogelijk) het ouderlijk gezin" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                        <items>
                                           <FXCollections fx:factory="observableArrayList">
                                              <String fx:value="Item 1" />
@@ -204,7 +188,7 @@
                                        </items>
                                     </ComboBox>
                                     <TextField id="tfPersoonNr" fx:id="tfGebPlaats1" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                    <TextField id="tfPersoonNr" fx:id="tfGebDatum1" prefWidth="200.0" text="dd-mm-yyyy" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <TextField id="tfPersoonNr" fx:id="tfGebDatum1" prefWidth="200.0" promptText="dd-mm-yyyy" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                     <TextField fx:id="tfGeslacht1" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                                  </children>
                                  <columnConstraints>

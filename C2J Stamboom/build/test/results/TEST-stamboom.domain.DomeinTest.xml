@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Thijn" name="stamboom.domain.DomeinTest" skipped="0" tests="11" time="0.077" timestamp="2015-04-07T13:02:36">
+<testsuite errors="0" failures="0" hostname="Thijn" name="stamboom.domain.DomeinTest" skipped="0" tests="11" time="0.099" timestamp="2015-04-08T06:52:35">
   <properties>
     <property name="netbeans.autoupdate.country" value="US" />
     <property name="javafx.binarycss" value="false" />
@@ -49,7 +49,7 @@
     <property name="user.name" value="Thijn" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner stamboom.domain.DomeinTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\GitHub\C2J-Git\C2J Stamboom\build\test\results\TEST-stamboom.domain.DomeinTest.xml crashfile=D:\GitHub\C2J-Git\C2J Stamboom\build\junitvmwatcher300200351186209605.properties propsfile=D:\GitHub\C2J-Git\C2J Stamboom\build\junit3605590592970616018.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner stamboom.domain.DomeinTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\GitHub\C2J-Git\C2J Stamboom\build\test\results\TEST-stamboom.domain.DomeinTest.xml crashfile=D:\GitHub\C2J-Git\C2J Stamboom\build\junitvmwatcher3926200958666739370.properties propsfile=D:\GitHub\C2J-Git\C2J Stamboom\build\junit7235732814790462455.properties" />
     <property name="auxiliary.org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.wrapAnnotations" value="WRAP_NEVER" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
@@ -84,7 +84,7 @@
     <property name="javac.debug" value="true" />
     <property name="javadoc.splitindex" value="true" />
     <property name="file.separator" value="\" />
-    <property name="javac.includesfile.binary" value="D:\GitHub\C2J-Git\C2J Stamboom\null1740747310" />
+    <property name="javac.includesfile.binary" value="D:\GitHub\C2J-Git\C2J Stamboom\null1131951050" />
     <property name="libs.junit_4.maven-pom" value="" />
     <property name="mkdist.disabled" value="false" />
     <property name="javac.test.processorpath" value="D:\Program Files\NetBeans 8.0.2\ide\modules\ext\mysql-connector-java-5.1.23-bin.jar:D:\Program Files\NetBeans 8.0.2\platform\modules\ext\junit-4.10.jar:D:\Program Files\Java\jdk1.8.0_31\jre/lib/javaws.jar:D:\Program Files\Java\jdk1.8.0_31\jre/lib/deploy.jar:D:\Program Files\Java\jdk1.8.0_31\jre/lib/plugin.jar:build/classes" />
@@ -98,7 +98,6 @@
     <property name="libs.junit.classpath" value="D:\Program Files\NetBeans 8.0.2\java\modules\ext\junit-3.8.2.jar" />
     <property name="libs.hibernate4-persistencemodelgen.javadoc" value="" />
     <property name="libs.jaxb.javadoc" value="D:\Program Files\NetBeans 8.0.2\ide\docs\jaxb-api-doc.zip" />
-    <property name="org.openide.awt.SwingBrowserImpl.do-not-block-awt" value="false" />
     <property name="javac.includes.binary" value="D:\GitHub\C2J-Git\C2J Stamboom\build\test\classes\stamboom\domain\DomeinTest.class" />
     <property name="ant.home" value="D:\Program Files\NetBeans 8.0.2\extide\ant" />
     <property name="libs.junit_4.src" value="D:\Program Files\NetBeans 8.0.2\java\docs\junit-4.10-sources.jar" />
@@ -287,6 +286,7 @@
     <property name="sun.awt.keepWorkingSetOnMinimize" value="true" />
     <property name="libs.jpa20-persistence.src" value="" />
     <property name="auxiliary.org-netbeans-modules-editor-indent.CodeStyle.project.spaces-per-tab" value="4" />
+    <property name="ignore.failing.tests" value="true" />
     <property name="javafx.enable.concurrent.external.runs" value="false" />
     <property name="javafx.deploy.embedJNLP" value="true" />
     <property name="dist.dir" value="dist" />
@@ -328,7 +328,7 @@
     <property name="libs.hibernate4-support.maven-pom" value="" />
     <property name="javafx.deploy.allowoffline" value="true" />
     <property name="libs.JAXB-ENDORSED.classpath" value="D:\Program Files\NetBeans 8.0.2\ide\modules\ext\jaxb\api\jaxb-api.jar" />
-    <property name="nb.internal.action.name" value="run.single" />
+    <property name="nb.internal.action.name" value="test.single" />
     <property name="libs.eclipselink.classpath" value="D:\Program Files\NetBeans 8.0.2\java\modules\ext\eclipselink\eclipselink.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\eclipselink\javax.persistence_2.1.0.v201304241213.jar;D:\Program Files\NetBeans 8.0.2\java\modules\ext\eclipselink\org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar" />
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
     <property name="libs.beans-binding.javadoc" value="D:\Program Files\NetBeans 8.0.2\java\docs\beansbinding-1.2.1-doc.zip" />
@@ -356,17 +356,18 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="javafx.deploy.installpermanently" value="false" />
   </properties>
-  <testcase classname="stamboom.domain.DomeinTest" name="testAddPersoon" time="0.021" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testSetOuders" time="0.002" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testGetNaam" time="0.001" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testAddHuwelijk" time="0.005" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testScheiding" time="0.001" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testGetPersoonEnPersonen" time="0.001" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testGetPersonenMetAchternaam" time="0.001" />
-  <testcase classname="stamboom.domain.DomeinTest" name="testSetEnIsHuwelijk" time="0.001" />
+  <testcase classname="stamboom.domain.DomeinTest" name="testAddPersoon" time="0.017" />
+  <testcase classname="stamboom.domain.DomeinTest" name="testGetNaam" time="0.002" />
+  <testcase classname="stamboom.domain.DomeinTest" name="testSetOuders" time="0.0" />
+  <testcase classname="stamboom.domain.DomeinTest" name="testAddHuwelijk" time="0.004" />
+  <testcase classname="stamboom.domain.DomeinTest" name="testScheiding" time="0.0" />
+  <testcase classname="stamboom.domain.DomeinTest" name="testGetPersonenMetAchternaam" time="0.0" />
   <testcase classname="stamboom.domain.DomeinTest" name="testHeeftGescheidenOuders" time="0.0" />
+  <testcase classname="stamboom.domain.DomeinTest" name="testSetEnIsHuwelijk" time="0.001" />
+  <testcase classname="stamboom.domain.DomeinTest" name="testGetPersoonEnPersonen" time="0.029" />
   <testcase classname="stamboom.domain.DomeinTest" name="testBeschrijvingGezin" time="0.001" />
   <testcase classname="stamboom.domain.DomeinTest" name="testAddOngehuwdGezin" time="0.002" />
-  <system-out><![CDATA[]]></system-out>
+  <system-out><![CDATA[2
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

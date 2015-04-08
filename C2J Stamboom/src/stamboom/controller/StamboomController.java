@@ -15,6 +15,7 @@ public class StamboomController {
 
     private Administratie admin;
     private IStorageMediator storageMediator;
+    private IStorageMediator databaseMediator;
 
     /**
      * creatie van stamboomcontroller met lege administratie en onbekend
