@@ -28,9 +28,12 @@ public class DatabaseMediator implements IStorageMediator {
     @Override
     public Administratie load() throws IOException {
         Administratie admin = new Administratie();
-        String url = (String) props.get("url");
-        String username = (String) props.get("username");
-        String password = (String) props.get("password");
+        String url = "jdbc:oracle:thin:@fhictora01.fhict.local:1521:fhictora";
+        String username = "dbi298630";
+        String password = "MjUuCmAc2H";
+        //String url = (String) props.get("url");
+        //String username = (String) props.get("username");
+        //String password = (String) props.get("password");
         Statement stat;
         String query;
         try {
@@ -154,10 +157,14 @@ public class DatabaseMediator implements IStorageMediator {
 
     @Override
     public void save(Administratie admin) throws IOException {
-        //todo opgave 4  
-        String url = (String) props.get("url");
-        String username = (String) props.get("username");
-        String password = (String) props.get("password");
+        //todo opgave 4 
+        //String driver = "oracle.jdbc.OracleDriver";
+        String url = "jdbc:oracle:thin:@fhictora01.fhict.local:1521:fhictora";
+        String username = "dbi298630";
+        String password = "MjUuCmAc2H";
+        //String url = (String) props.get("url");
+        //String username = (String) props.get("username");
+        //String password = (String) props.get("password");
         Statement stat;
         String query;
         try {
