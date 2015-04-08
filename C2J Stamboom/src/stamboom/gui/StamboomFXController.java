@@ -137,7 +137,6 @@ public class StamboomFXController extends StamboomController implements Initiali
                 cbGezinnen.setItems(controller.getAdministratie().getGezinnen());
                 cbOuderlijkGezin.setItems(controller.getAdministratie().getGezinnen());
                 cbOuderlijkGezin1.setItems(controller.getAdministratie().getGezinnen());
-                showGezin((Gezin)cbGezinnen.getSelectionModel().getSelectedItem());
             }
         });
 
@@ -177,8 +176,8 @@ public class StamboomFXController extends StamboomController implements Initiali
         }
 
         int nr = Integer.parseInt(tfPersoonNr.getText());
-        Persoon p = getAdministratie().getPersoon(nr);
-        if (getAdministratie().setOuders(p, ouderlijkGezin)) {
+        Persoon p = controller.getAdministratie().getPersoon(nr);
+        if (controller.getAdministratie().setOuders(p, ouderlijkGezin)) {
             showDialog("Success", ouderlijkGezin.toString()
                     + " is nu het ouderlijk gezin van " + p.getNaam());
         }
@@ -294,7 +293,7 @@ public class StamboomFXController extends StamboomController implements Initiali
         }
         Gezin g;
         if (huwdatum != null) {
-            g = getAdministratie().addHuwelijk(ouder1, ouder2, huwdatum);
+            g = controller.getAdministratie().addHuwelijk(ouder1, ouder2, huwdatum);
             if (g == null) {
                 showDialog("Warning", "Invoer huwelijk is niet geaccepteerd");
             } else {
@@ -302,14 +301,14 @@ public class StamboomFXController extends StamboomController implements Initiali
                 try {
                     scheidingsdatum = StringUtilities.datum(tfScheidingInvoer.getText());
                     if (scheidingsdatum != null) {
-                        getAdministratie().setScheiding(g, scheidingsdatum);
+                        controller.getAdministratie().setScheiding(g, scheidingsdatum);
                     }
                 } catch (IllegalArgumentException exc) {
                     showDialog("Warning", "scheidingsdatum :" + exc.getMessage());
                 }
             }
         } else {
-            g = getAdministratie().addOngehuwdGezin(ouder1, ouder2);
+            g = controller.getAdministratie().addOngehuwdGezin(ouder1, ouder2);
             if (g == null) {
                 showDialog("Warning", "Invoer ongehuwd gezin is niet geaccepteerd");
             }
@@ -417,6 +416,7 @@ public class StamboomFXController extends StamboomController implements Initiali
     }
 
     private void clearTabGezin() {
+        cbGezinnen.getSelectionModel().clearSelection();
         tfOuder1.clear();
         tfOuder2.clear();
         tfHuwelijk.clear();
