@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="1" hostname="Laptop-Jeroen" name="stamboom.storage.DatabaseTest" skipped="0" tests="2" time="0.094" timestamp="2015-04-07T13:03:36">
+<testsuite errors="0" failures="1" hostname="Laptop-Jeroen" name="stamboom.storage.DatabaseTest" skipped="0" tests="2" time="0.128" timestamp="2015-04-08T06:57:13">
   <properties>
     <property name="netbeans.autoupdate.country" value="NL" />
     <property name="javafx.binarycss" value="false" />
@@ -36,6 +36,7 @@
     <property name="org.xml.sax.driver" value="com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser" />
     <property name="libs.javac-api.javadoc" value="" />
     <property name="os.name" value="Windows 8.1" />
+    <property name="test.class" value="stamboom.storage.DatabaseTest" />
     <property name="libs.beans-binding.classpath" value="C:\Program Files\NetBeans 8.0.1\java\modules\ext\beansbinding-1.2.1.jar" />
     <property name="ap.proc.none.internal" value="" />
     <property name="libs.JWSAntTasks.maven-pom" value="" />
@@ -49,7 +50,7 @@
     <property name="user.name" value="Jeroen" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner stamboom.storage.DatabaseTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Jeroen\Documents\GitHub\C2J-Git\C2J Stamboom\build\test\results\TEST-stamboom.storage.DatabaseTest.xml crashfile=C:\Users\Jeroen\Documents\GitHub\C2J-Git\C2J Stamboom\build\junitvmwatcher8974962856174565176.properties propsfile=C:\Users\Jeroen\Documents\GitHub\C2J-Git\C2J Stamboom\build\junit5366001130067464901.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner stamboom.storage.DatabaseTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Jeroen\Documents\GitHub\C2J-Git\C2J Stamboom\build\test\results\TEST-stamboom.storage.DatabaseTest.xml crashfile=C:\Users\Jeroen\Documents\GitHub\C2J-Git\C2J Stamboom\build\junitvmwatcher3038262162969704033.properties propsfile=C:\Users\Jeroen\Documents\GitHub\C2J-Git\C2J Stamboom\build\junit277750289686317889.properties" />
     <property name="auxiliary.org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.wrapAnnotations" value="WRAP_NEVER" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
@@ -71,7 +72,6 @@
     <property name="javafx.deploy.includeDT" value="true" />
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_25\jre\lib\endorsed" />
     <property name="libs.groovy-all.src" value="" />
-    <property name="test.includes" value="stamboom/storage/DatabaseTest.java" />
     <property name="netbeans.dynamic.classpath" value="C:\Program Files\NetBeans 8.0.1\platform\core\core.jar;C:\Program Files\NetBeans 8.0.1\platform\core\org-openide-filesystems.jar;C:\Program Files\NetBeans 8.0.1\platform\core\locale\core_ja.jar;C:\Program Files\NetBeans 8.0.1\platform\core\locale\core_pt_BR.jar;C:\Program Files\NetBeans 8.0.1\platform\core\locale\core_ru.jar;C:\Program Files\NetBeans 8.0.1\platform\core\locale\core_zh_CN.jar;C:\Program Files\NetBeans 8.0.1\platform\core\locale\org-openide-filesystems_ja.jar;C:\Program Files\NetBeans 8.0.1\platform\core\locale\org-openide-filesystems_pt_BR.jar;C:\Program Files\NetBeans 8.0.1\platform\core\locale\org-openide-filesystems_ru.jar;C:\Program Files\NetBeans 8.0.1\platform\core\locale\org-openide-filesystems_zh_CN.jar;C:\Program Files\NetBeans 8.0.1\nb\core\org-netbeans-upgrader.jar;C:\Program Files\NetBeans 8.0.1\nb\core\locale\core_nb.jar;C:\Program Files\NetBeans 8.0.1\nb\core\locale\core_nb_ja.jar;C:\Program Files\NetBeans 8.0.1\nb\core\locale\core_nb_pt_BR.jar;C:\Program Files\NetBeans 8.0.1\nb\core\locale\core_nb_ru.jar;C:\Program Files\NetBeans 8.0.1\nb\core\locale\core_nb_zh_CN.jar;C:\Program Files\NetBeans 8.0.1\nb\core\locale\org-netbeans-upgrader_ja.jar;C:\Program Files\NetBeans 8.0.1\nb\core\locale\org-netbeans-upgrader_pt_BR.jar;C:\Program Files\NetBeans 8.0.1\nb\core\locale\org-netbeans-upgrader_ru.jar;C:\Program Files\NetBeans 8.0.1\nb\core\locale\org-netbeans-upgrader_zh_CN.jar" />
     <property name="jnlp.enabled" value="false" />
     <property name="java.vm.specification.version" value="1.8" />
@@ -87,7 +87,7 @@
     <property name="javac.debug" value="true" />
     <property name="javadoc.splitindex" value="true" />
     <property name="file.separator" value="\" />
-    <property name="javac.includesfile.binary" value="C:\Users\Jeroen\Documents\GitHub\C2J-Git\C2J Stamboom\null724507002" />
+    <property name="javac.includesfile.binary" value="C:\Users\Jeroen\Documents\GitHub\C2J-Git\C2J Stamboom\null500630478" />
     <property name="libs.junit_4.maven-pom" value="" />
     <property name="mkdist.disabled" value="false" />
     <property name="javac.test.processorpath" value="C:\Program Files\NetBeans 8.0.1\ide\modules\ext\mysql-connector-java-5.1.23-bin.jar:C:\Program Files\NetBeans 8.0.1\platform\modules\ext\junit-4.10.jar:C:\Program Files\Java\jdk1.8.0_25\jre/lib/javaws.jar:C:\Program Files\Java\jdk1.8.0_25\jre/lib/deploy.jar:C:\Program Files\Java\jdk1.8.0_25\jre/lib/plugin.jar:build/classes" />
@@ -101,6 +101,7 @@
     <property name="libs.junit.classpath" value="C:\Program Files\NetBeans 8.0.1\java\modules\ext\junit-3.8.2.jar" />
     <property name="libs.hibernate4-persistencemodelgen.javadoc" value="" />
     <property name="libs.jaxb.javadoc" value="C:\Program Files\NetBeans 8.0.1\ide\docs\jaxb-api-doc.zip" />
+    <property name="org.openide.awt.SwingBrowserImpl.do-not-block-awt" value="false" />
     <property name="javac.includes.binary" value="C:\Users\Jeroen\Documents\GitHub\C2J-Git\C2J Stamboom\build\test\classes\stamboom\storage\DatabaseTest.class" />
     <property name="ant.home" value="C:\Program Files\NetBeans 8.0.1\extide\ant" />
     <property name="libs.junit_4.src" value="C:\Program Files\NetBeans 8.0.1\java\docs\junit-4.10-sources.jar" />
@@ -134,7 +135,7 @@
     <property name="manifest.available" value="true" />
     <property name="libs.spring-framework300.maven-pom" value="" />
     <property name="run.test.classpath" value="C:\Program Files\NetBeans 8.0.1\ide\modules\ext\mysql-connector-java-5.1.23-bin.jar:C:\Program Files\NetBeans 8.0.1\platform\modules\ext\junit-4.10.jar:C:\Program Files\Java\jdk1.8.0_25\jre/lib/javaws.jar:C:\Program Files\Java\jdk1.8.0_25\jre/lib/deploy.jar:C:\Program Files\Java\jdk1.8.0_25\jre/lib/plugin.jar:build/classes:build/test/classes" />
-    <property name="ant.project.invoked-targets" value="test-single" />
+    <property name="ant.project.invoked-targets" value="debug-test" />
     <property name="test.binaryexcludes" value="" />
     <property name="libs.swing-layout.javadoc" value="C:\Program Files\NetBeans 8.0.1\platform\docs\swing-layout-1.0.4-doc.zip" />
     <property name="sun.java2d.dpiaware" value="true" />
@@ -143,6 +144,7 @@
     <property name="libs.PostgreSQLDriver.maven-pom" value="" />
     <property name="java.class.version" value="52.0" />
     <property name="libs.JAVADB_DRIVER_LABEL.classpath" value="C:\Program Files\Java\jdk1.8.0_25\db\lib\derby.jar;C:\Program Files\Java\jdk1.8.0_25\db\lib\derbyclient.jar;C:\Program Files\Java\jdk1.8.0_25\db\lib\derbynet.jar" />
+    <property name="jpda.address" value="javadebug" />
     <property name="libs.hibernate4-persistencemodelgen.maven-pom" value="" />
     <property name="libs.eclipselink.javadoc" value="C:\Program Files\NetBeans 8.0.1\java\modules\ext\docs\javax.persistence-2.1.0-doc.zip" />
     <property name="user.properties.file" value="C:\Users\Jeroen\AppData\Roaming\NetBeans\8.0.1\build.properties" />
@@ -291,19 +293,18 @@
     <property name="libs.jpa20-persistence.src" value="" />
     <property name="auxiliary.org-netbeans-modules-editor-indent.CodeStyle.project.spaces-per-tab" value="4" />
     <property name="libs.JAVADB_DRIVER_LABEL.maven-pom" value="" />
-    <property name="ignore.failing.tests" value="true" />
     <property name="javafx.enable.concurrent.external.runs" value="false" />
     <property name="javafx.deploy.embedJNLP" value="true" />
     <property name="dist.dir" value="dist" />
     <property name="libs.groovy-all.javadoc" value="" />
     <property name="testng.debug.mode" value="" />
-    <property name="javac.fork" value="false" />
     <property name="libs.groovy-all.classpath" value="C:\Users\Jeroen\AppData\Roaming\NetBeans\8.0.1\modules\ext\groovy-all.jar" />
+    <property name="javac.fork" value="false" />
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
     <property name="default.javac.source" value="1.8" />
     <property name="debug-transport-by-os" value="dt_shmem" />
-    <property name="libs.MySQLDriver.src" value="" />
     <property name="sun.jnu.encoding" value="Cp1252" />
+    <property name="libs.MySQLDriver.src" value="" />
     <property name="build.test.results.dir" value="build/test/results" />
     <property name="java.runtime.version" value="1.8.0_25-b18" />
     <property name="javafx.run.inbrowser" value="&lt;Default System Browser&gt;" />
@@ -328,15 +329,15 @@
     <property name="os.version" value="6.3" />
     <property name="application.args" value="" />
     <property name="manifest.custom.permissions" value="" />
-    <property name="main.class.available" value="true" />
     <property name="sun.awt.enableExtraMouseButtons" value="true" />
+    <property name="main.class.available" value="true" />
     <property name="sun.desktop" value="windows" />
     <property name="libs.hibernate4-persistence.src" value="" />
     <property name="auxiliary.org-netbeans-spi-editor-hints-projects.perProjectHintSettingsFile" value="nbproject/cfg_hints.xml" />
     <property name="libs.hibernate4-support.maven-pom" value="" />
     <property name="javafx.deploy.allowoffline" value="true" />
     <property name="libs.JAXB-ENDORSED.classpath" value="C:\Program Files\NetBeans 8.0.1\ide\modules\ext\jaxb\api\jaxb-api.jar" />
-    <property name="nb.internal.action.name" value="test.single" />
+    <property name="nb.internal.action.name" value="debug.single" />
     <property name="libs.eclipselink.classpath" value="C:\Program Files\NetBeans 8.0.1\java\modules\ext\eclipselink\eclipselink.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\eclipselink\javax.persistence_2.1.0.v201304241213.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\eclipselink\org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar" />
     <property name="libs.beans-binding.javadoc" value="C:\Program Files\NetBeans 8.0.1\java\docs\beansbinding-1.2.1-doc.zip" />
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
@@ -356,8 +357,8 @@
     <property name="libs.CopyLibs.src" value="" />
     <property name="build.dir" value="build" />
     <property name="ant.version" value="Apache Ant(TM) version 1.9.4 compiled on April 29 2014" />
-    <property name="file.encoding" value="Cp1252" />
     <property name="build.classes.excludes" value="**/*.java,**/*.form" />
+    <property name="file.encoding" value="Cp1252" />
     <property name="jdkBug6558476" value="false" />
     <property name="javadoc.nonavbar" value="false" />
     <property name="platform.active" value="default_platform" />
