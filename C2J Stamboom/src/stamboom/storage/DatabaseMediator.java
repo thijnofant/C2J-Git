@@ -4,10 +4,10 @@
  */
 package stamboom.storage;
 
-import com.mysql.jdbc.PreparedStatement;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -45,7 +45,7 @@ public class DatabaseMediator implements IStorageMediator {
             ResultSet rs;
             try {
                 stat = conn.createStatement();
-                query = "SELECT persoonNummer, achternaam, voornaam, tussenvoegsel, geboortedatum, geboorteplaats, geslacht FROM PERSONEN ORDER BY persoonsnummer";
+                query = "SELECT persoonNummer, achternaam, voornamen, tussenvoegsel, geboortedatum, geboorteplaats, geslacht FROM PERSONEN ORDER BY persoonnummer";
                 rs = stat.executeQuery(query);
                 String achternaam;
                 String[] voornamen;
@@ -56,11 +56,11 @@ public class DatabaseMediator implements IStorageMediator {
                 while(rs.next())
                 {
                     achternaam = rs.getString("achternaam");
-                    voornamen = rs.getString("voornaam").split(" ");
+                    voornamen = rs.getString("voornamen").split(" ");
                     tussenvoegsel = rs.getString("tussenvoegsel");
-                    geboortedatum = new GregorianCalendar();
-                    geboortedatum.setTime(rs.getDate("geboortedatum"));
-                    geboorteplaats = rs.getString("geboorteplaats");
+                    geboortedatum = new GregorianCalendar();         
+                    geboortedatum.setTime(rs.getDate("GEBOORTEDATUM"));
+                    geboorteplaats = rs.getString("GEBOORTEPLAATS");
                     if(rs.getString("geslacht").equals("M"))
                     {
                         geslacht = Geslacht.MAN;
@@ -71,15 +71,14 @@ public class DatabaseMediator implements IStorageMediator {
                     }
                     admin.addPersoon(geslacht, voornamen, achternaam, tussenvoegsel, geboortedatum, geboorteplaats, null);
                 }
-                
             } catch (SQLException ex) {
                 System.out.println("2" + ex.getMessage());
-            }
+            }            
             
             try
             {
                 stat = conn.createStatement();
-                query = "SELECT gezinsnummer, ouder1, ouder2, huwelijksdatum, scheidingsdatum FROM gezinnen ORDER BY gezinsnummer";
+                query = "SELECT gezinnummer, ouder1, ouder2, huwlijksdatum, scheidingsdatum FROM gezinnen ORDER BY gezinnummer";
                 rs = stat.executeQuery(query);
                 Persoon ouder1;
                 Persoon ouder2;
@@ -90,9 +89,9 @@ public class DatabaseMediator implements IStorageMediator {
                     ouder1 = admin.getPersoon(rs.getInt("ouder1"));
                     ouder2 = admin.getPersoon(rs.getInt("ouder2"));
                     huwelijksdatum = new GregorianCalendar();
-                    if(rs.getDate("huwelijksdatum") != null)
+                    if(rs.getDate("huwlijksdatum") != null)
                     {
-                    huwelijksdatum.setTime(rs.getDate("huwelijksdatum"));
+                    huwelijksdatum.setTime(rs.getDate("huwlijksdatum"));
                     }
                     else
                     {
@@ -133,13 +132,13 @@ public class DatabaseMediator implements IStorageMediator {
             try
             {
                 stat = conn.createStatement();
-                query = "SELECT persoonsnummer, ouders FROM PERSONEN ORDER BY persoonsnummer";
+                query = "SELECT persoonnummer, ouders FROM PERSONEN ORDER BY persoonnummer";
                 rs = stat.executeQuery(query);
                 while(rs.next())
                 {
                     if(rs.getInt("ouders") != 0)
                     {
-                        Persoon persoon = admin.getPersoon(rs.getInt("persoonsnummer"));
+                        Persoon persoon = admin.getPersoon(rs.getInt("persoonnummer"));
                         Gezin gezin = admin.getGezin(rs.getInt("ouders"));
                         admin.setOuders(persoon, gezin);
                     }
@@ -205,14 +204,14 @@ public class DatabaseMediator implements IStorageMediator {
 
             for (Persoon persoon : admin.getPersonen()) {
                 String geslacht;
+                
                 if (persoon.getGeslacht().equals(Geslacht.MAN)) {
                     geslacht = "M";
                 } else {
-                    geslacht = "V";
+                    geslacht = "F";
                 }
-                query = "INSERT INTO PERSONEN VALUES(?,?,?,?,?,?,?,?)";
                 try {
-                    PreparedStatement ps = (PreparedStatement) conn.prepareStatement(query);
+                    PreparedStatement ps = conn.prepareStatement("INSERT INTO PERSONEN VALUES(?,?,?,?,?,?,?,?)");
                     ps.setInt(1, persoon.getNr());
                     ps.setString(2, persoon.getAchternaam());
                     ps.setString(3, persoon.getVoornamen());
@@ -234,7 +233,7 @@ public class DatabaseMediator implements IStorageMediator {
 
                 query = "INSERT INTO GEZINNEN VALUES(?,?,?,?,?)";
                 try {
-                    PreparedStatement ps = (PreparedStatement) conn.prepareStatement(query);
+                    PreparedStatement ps = conn.prepareStatement(query);
                     ps.setInt(1, gezin.getNr());
                     ps.setInt(2, gezin.getOuder1().getNr());
                     if (ouder2 == null) {
@@ -259,10 +258,10 @@ public class DatabaseMediator implements IStorageMediator {
 
             }
             for (Persoon persoon : admin.getPersonen()) {
-                query = "UPDATE PERSONEN SET ouders = ? WHERE persoonsNummer = ?";
+                query = "UPDATE PERSONEN SET ouders = ? WHERE persoonNummer = ?";
                 try {
                     if (persoon.getOuderlijkGezin() != null) {
-                        PreparedStatement ps = (PreparedStatement) conn.prepareStatement(query);
+                        PreparedStatement ps = conn.prepareStatement(query);
                         ps.setInt(1, persoon.getOuderlijkGezin().getNr());
                         ps.setInt(2, persoon.getNr());
                         ps.executeUpdate();

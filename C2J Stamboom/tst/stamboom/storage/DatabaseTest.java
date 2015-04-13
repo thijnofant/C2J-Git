@@ -122,9 +122,11 @@ public class DatabaseTest {
 
         Persoon jan = adm.addPersoon(Geslacht.MAN, new String[]{"Jan"}, "Boven",
                 "van", new GregorianCalendar(1953, Calendar.APRIL, 23), "Amsterdam", null);
+        Persoon klara = adm.addPersoon(Geslacht.MAN, new String[]{"klara"}, "testeraar", 
+                null, new GregorianCalendar(1953, Calendar.APRIL, 23), "Eindhoven", null);
 
         assertEquals("numering personen niet meer juist", 5, jan.getNr());
-        Gezin janEnTeuntje = adm.addOngehuwdGezin(jan, teuntje);
+        Gezin janEnTeuntje = adm.addOngehuwdGezin(jan, klara);
         assertEquals("nummering gezinnen niet meer juist", 4, janEnTeuntje.getNr());
     }
 

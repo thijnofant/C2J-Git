@@ -366,7 +366,7 @@ public class StamboomFXController extends StamboomController implements Initiali
     }
 
     public void openStamboom(Event evt) throws IOException {
-        // todo opgave 3
+        // todo opgave 3 DONE
         if (withDatabase) {
             this.controller.loadFromDatabase();
         }
@@ -388,7 +388,7 @@ public class StamboomFXController extends StamboomController implements Initiali
     }
 
     public void saveStamboom(Event evt) throws IOException {
-        // todo opgave 3
+        // todo opgave 3 DONE
         if (withDatabase) {
             this.controller.saveToDatabase();
         }

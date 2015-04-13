@@ -77,9 +77,8 @@ public class Administratie implements Serializable {
             throw new IllegalArgumentException("lege geboorteplaats is niet toegestaan");
         }
 
-       
+       /////////
         Persoon newPersoon = new Persoon(this.nextPersNr, vnamen, anaam, tvoegsel, gebdat, gebplaats, geslacht, ouderlijkGezin);
-        
         for (Persoon persoon : this.personen)
         {
             if (persoon.getNaam() == newPersoon.getNaam() && persoon.getGebPlaats() == newPersoon.getGebPlaats() && persoon.getGebDat() == newPersoon.getGebDat() )

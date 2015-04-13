@@ -41,8 +41,13 @@ public class Persoon implements Serializable{
         this.ouderlijkGezin = ouderlijkGezin;
         this.alsOuderBetrokkenIn = new ArrayList<>();
         this.geslacht = g;
-
-        this.tussenvoegsel = tvoegsel.toLowerCase();
+        
+        if (tvoegsel!= null) {
+            this.tussenvoegsel = tvoegsel.toLowerCase();
+        }
+        else{
+            this.tussenvoegsel = null;
+        }
         this.voornamen = vnamen;
         for (int i = 0; i < this.voornamen.length; i++)
         {
