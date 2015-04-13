@@ -99,7 +99,7 @@ public class StamboomController {
      * @throws IOException
      */
     public void loadFromDatabase() throws IOException {
-        //todo opgave 4
+        //todo opgave 4 DONE
         initDatabaseMedium();
         this.admin = databaseMediator.load();
     }
@@ -110,8 +110,8 @@ public class StamboomController {
      * @throws IOException
      */
     public void saveToDatabase() throws IOException {
-        //todo opgave 4
-        //initDatabaseMedium();
+        //todo opgave 4 DONE
+        initDatabaseMedium();
         databaseMediator.save(this.admin);
     }
 

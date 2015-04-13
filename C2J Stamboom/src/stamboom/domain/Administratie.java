@@ -129,7 +129,9 @@ public class Administratie implements Serializable {
                         || ouder1.beschrijving().equals(gez.getOuder2().beschrijving())
                         || ouder.beschrijving().equals(gez.getOuder1().beschrijving())
                         || ouder.beschrijving().equals(gez.getOuder2().beschrijving())) {
-                    return null;
+                    if (!(gez.heeftGescheidenOudersOp(new GregorianCalendar()))) {
+                        return null;
+                    }
                 }
             }
         } catch (Exception e) {

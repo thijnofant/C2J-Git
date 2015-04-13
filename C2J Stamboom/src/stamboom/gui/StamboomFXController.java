@@ -108,18 +108,7 @@ public class StamboomFXController extends StamboomController implements Initiali
 
     private void initComboboxes() {
 
-
-            //Test persoon voor het testen van de CB
-        String[] namen;
-        namen = new String[]{"test"};
-        GregorianCalendar GC = new GregorianCalendar();
-//        controller.getAdministratie().addPersoon(Geslacht.MAN, namen, "Test", "De", GC, "Testland", null);
-//        controller.getAdministratie().addPersoon(Geslacht.MAN, namen, "KAPPA", "van", GC, "Testland", null);
-//        controller.getAdministratie().addPersoon(Geslacht.MAN, namen, "yolo", "haha", GC, "KAPPA", null);
-//        controller.getAdministratie().addPersoon(Geslacht.MAN, namen, "Testerino", "", GC, "Testerino", null);
-        //Test: Geslaagd.
-
-        cbPersonen.setItems(this.controller.getAdministratie().getPersonen());        
+        cbPersonen.setItems(this.controller.getAdministratie().getPersonen());
         cbOuderlijkGezin.setItems(this.controller.getAdministratie().getGezinnen());
         cbOuder1Invoer.setItems(this.controller.getAdministratie().getPersonen());
         cbOuder2Invoer.setItems(this.controller.getAdministratie().getPersonen());
@@ -302,7 +291,6 @@ public class StamboomFXController extends StamboomController implements Initiali
     public void okGezinInvoer(Event evt) {
         Persoon ouder1 = (Persoon) cbOuder1Invoer.getSelectionModel().getSelectedItem();
         if (ouder1 == null) {
-            //showDialog("Warning", "eerste ouder is niet ingevoerd");
             this.showWindow("Warning \nEerste ouder is niet ingevoerd");
             return;
         }
@@ -311,7 +299,6 @@ public class StamboomFXController extends StamboomController implements Initiali
         try {
             huwdatum = StringUtilities.datum(tfHuwelijkInvoer.getText());
         } catch (IllegalArgumentException exc) {
-            //showDialog("Warning", "huwelijksdatum :" + exc.getMessage());
             this.showWindow("Warning \nhuwelijksdatum :" + exc.getMessage());
             return;
         }
@@ -328,7 +315,6 @@ public class StamboomFXController extends StamboomController implements Initiali
                         controller.getAdministratie().setScheiding(g, scheidingsdatum);
                     }
                 } catch (IllegalArgumentException exc) {
-                    //showDialog("Warning", "scheidingsdatum :" + exc.getMessage());
                     this.showWindow("Warning \nscheidingsdatum: " + exc.getMessage());
 
                 }
@@ -336,7 +322,6 @@ public class StamboomFXController extends StamboomController implements Initiali
         } else {
             g = controller.getAdministratie().addOngehuwdGezin(ouder1, ouder2);
             if (g == null) {
-                //showDialog("Warning", "Invoer ongehuwd gezin is niet geaccepteerd");
                 this.showWindow("Warning \nInvoer ongehuwd gezin is niet geaccepteerd");
             }
         }
@@ -366,41 +351,54 @@ public class StamboomFXController extends StamboomController implements Initiali
     }
 
     public void openStamboom(Event evt) throws IOException {
-        // todo opgave 3 DONE
+        // todo opgave 3
         if (withDatabase) {
-            this.controller.loadFromDatabase();
-        }
-        else{
+            try {
+             this.controller.loadFromDatabase();   
+             clearTabs();
+             initComboboxes();
+            this.showWindow("Administration was Loaded from database");
+            } catch (Exception e) {
+                this.showWindow("Something went wrong during loading");
+            }
+            
+        } else {
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Choose Administration File...");
             File file = fileChooser.showOpenDialog(this.getStage());
             try {
                 if (this.controller.deserialize(file)) {
-                    this.showWindow("Something went wrong during loading");
+                    clearTabs();
+                    initComboboxes();
+                    this.showWindow("Administration was Loaded from file");
                 }
             } catch (Exception e) {
                 this.showWindow("Something went wrong during loading");
             }
-            clearTabs();
-            initComboboxes();
-            this.showWindow("Administration was Saved to file");
+            
         }
     }
 
     public void saveStamboom(Event evt) throws IOException {
-        // todo opgave 3 DONE
+        // todo opgave 3
         if (withDatabase) {
-            this.controller.saveToDatabase();
-        }
-        else{
+            try {
+                this.controller.saveToDatabase();
+                this.showWindow("Administration was Saved");
+            } catch (Exception e) {
+                this.showWindow("Something went wrong during saving");
+            }
+            
+            
+        } else {
             try {
                 FileChooser fileChooser = new FileChooser();
                 fileChooser.setTitle("Save As...");
                 File file = fileChooser.showSaveDialog(this.getStage());
                 this.controller.serialize(file);
-                this.showWindow("Administration was Loaded");
+                this.showWindow("Administration was Saved");
             } catch (Exception e) {
-                this.showWindow("Something went wrong during loading");
+                this.showWindow("Something went wrong during saving");
             }
         }
     }
