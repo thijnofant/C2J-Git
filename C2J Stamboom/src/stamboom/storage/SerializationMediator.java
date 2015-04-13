@@ -60,6 +60,7 @@ public class SerializationMediator implements IStorageMediator {
             return null;
         }
         System.out.println("Deserialized Administration...");
+        System.out.println("aantal personen: " + admin.aantalGeregistreerdePersonen());
         System.out.println("aantal gezinnen: " + admin.aantalGeregistreerdeGezinnen());
         return admin;
     }

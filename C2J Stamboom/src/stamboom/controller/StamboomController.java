@@ -44,7 +44,7 @@ public class StamboomController {
      * @param bestand
      * @throws IOException
      */
-    public void serialize(File bestand) throws IOException {
+    public boolean serialize(File bestand) throws IOException {
         //todo opgave 2 DONE
         Properties props = new Properties();
         try {
@@ -55,6 +55,7 @@ public class StamboomController {
         
         storageMediator.configure(props);
         storageMediator.save(admin);
+        return true;
     }
 
     /**
@@ -63,7 +64,7 @@ public class StamboomController {
      * @param bestand
      * @throws IOException
      */
-    public void deserialize(File bestand) throws IOException {
+    public boolean deserialize(File bestand) throws IOException {
         //todo opgave 2 DONE
         Properties props = new Properties();
         try {
@@ -71,9 +72,16 @@ public class StamboomController {
         } catch (Exception e) {
             System.out.println("Iets ging fout met het laden van de properties bij deserialize");
         }
-        
         storageMediator.configure(props);
-        admin = storageMediator.load();
+        Administratie tempAdmin = storageMediator.load();
+        if(tempAdmin == null)
+        {
+            return false;
+        }
+        else{
+            admin = tempAdmin;
+            return true;
+        }
     }
     
     // opgave 4

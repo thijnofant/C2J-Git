@@ -4,6 +4,7 @@
  */
 package stamboom.gui;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
@@ -103,22 +104,22 @@ public class StamboomFXController extends StamboomController implements Initiali
         withDatabase = false;
         controller = new StamboomController();
         initComboboxes();
-
     }
 
     private void initComboboxes() {
 
-        //Test persoon voor het testen van de CB
+
+            //Test persoon voor het testen van de CB
         String[] namen;
         namen = new String[]{"test"};
         GregorianCalendar GC = new GregorianCalendar();
-        controller.getAdministratie().addPersoon(Geslacht.MAN, namen, "Test", "De", GC, "Testland", null);
-        controller.getAdministratie().addPersoon(Geslacht.MAN, namen, "KAPPA", "van", GC, "Testland", null);
-        controller.getAdministratie().addPersoon(Geslacht.MAN, namen, "yolo", "haha", GC, "KAPPA", null);
-        controller.getAdministratie().addPersoon(Geslacht.MAN, namen, "Testerino", "", GC, "Testerino", null);
+//        controller.getAdministratie().addPersoon(Geslacht.MAN, namen, "Test", "De", GC, "Testland", null);
+//        controller.getAdministratie().addPersoon(Geslacht.MAN, namen, "KAPPA", "van", GC, "Testland", null);
+//        controller.getAdministratie().addPersoon(Geslacht.MAN, namen, "yolo", "haha", GC, "KAPPA", null);
+//        controller.getAdministratie().addPersoon(Geslacht.MAN, namen, "Testerino", "", GC, "Testerino", null);
         //Test: Geslaagd.
 
-        cbPersonen.setItems(this.controller.getAdministratie().getPersonen());
+        cbPersonen.setItems(this.controller.getAdministratie().getPersonen());        
         cbOuderlijkGezin.setItems(this.controller.getAdministratie().getGezinnen());
         cbOuder1Invoer.setItems(this.controller.getAdministratie().getPersonen());
         cbOuder2Invoer.setItems(this.controller.getAdministratie().getPersonen());
@@ -366,12 +367,42 @@ public class StamboomFXController extends StamboomController implements Initiali
 
     public void openStamboom(Event evt) throws IOException {
         // todo opgave 3
-        this.controller.loadFromDatabase();
+        if (withDatabase) {
+            this.controller.loadFromDatabase();
+        }
+        else{
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Choose Administration File...");
+            File file = fileChooser.showOpenDialog(this.getStage());
+            try {
+                if (this.controller.deserialize(file)) {
+                    this.showWindow("Something went wrong during loading");
+                }
+            } catch (Exception e) {
+                this.showWindow("Something went wrong during loading");
+            }
+            clearTabs();
+            initComboboxes();
+            this.showWindow("Administration was Saved to file");
+        }
     }
 
     public void saveStamboom(Event evt) throws IOException {
         // todo opgave 3
-        this.controller.saveToDatabase();
+        if (withDatabase) {
+            this.controller.saveToDatabase();
+        }
+        else{
+            try {
+                FileChooser fileChooser = new FileChooser();
+                fileChooser.setTitle("Save As...");
+                File file = fileChooser.showSaveDialog(this.getStage());
+                this.controller.serialize(file);
+                this.showWindow("Administration was Loaded");
+            } catch (Exception e) {
+                this.showWindow("Something went wrong during loading");
+            }
+        }
     }
 
     public void closeApplication(Event evt) throws IOException {

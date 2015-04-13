@@ -332,6 +332,9 @@ public class Administratie implements Serializable {
      * @return de geregistreerde personen
      */
     public ObservableList<Persoon> getPersonen() {
+        if (obsPersonen == null) {
+            obsPersonen = FXCollections.observableList(personen);
+        }
          return FXCollections.unmodifiableObservableList(obsPersonen);
     }
 
@@ -386,6 +389,9 @@ public class Administratie implements Serializable {
      * @return de geregistreerde gezinnen
      */
     public ObservableList<Gezin> getGezinnen() {
+        if (obsGezinnen == null) {
+            obsGezinnen = FXCollections.observableList(gezinnen);
+        }
        return FXCollections.unmodifiableObservableList(obsGezinnen);
     }
 
